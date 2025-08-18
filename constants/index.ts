@@ -338,82 +338,87 @@ export const clientsItem = [
 export const projectItem = [
    {
       id: 1,
-      title: "fyde",
+      title: "Course Tools",
       href: "/case/",
       src: project1,
       links: [
          {
             id: 1,
-            title: "audit",
+            title: "Course Management",
             href: "/services",
          },
          {
             id: 2,
-            title: "copywriting",
+            title: "Course Lessons",
             href: "/services",
          },
          {
             id: 3,
-            title: "sales deck",
+            title: "Course Lessons",
             href: "/services",
          },
          {
             id: 4,
-            title: "slides design",
+            title: "Games",
             href: "/services",
          },
       ]
    },
    {
       id: 2,
-      title: "vise",
+      title: "Dashboard",
       href: "/case/",
       src: project2,
       links: [
          {
             id: 1,
-            title: "agency",
+            title: "Admin Dashboard",
             href: "/services",
          },
          {
             id: 2,
-            title: "compony presentation",
+            title: "User Dashboard",
             href: "/services",
          },
       ]
    },
    {
       id: 3,
-      title: "trawa",
+      title: "Learning Tools",
       href: "/case/",
       src: project3,
       links: [
          {
             id: 1,
-            title: "brand identity",
+            title: "Quiz",
             href: "/services",
          },
          {
             id: 2,
-            title: "design research",
+            title: "Assessments",
             href: "/services",
          },
          {
             id: 3,
-            title: "investor deck",
+            title: "Scorm",
             href: "/services",
          },
       ]
    },
    {
       id: 4,
-      title: "premiumblend",
+      title: "Analytics",
       href: "/case/",
       src: project4,
       links: [
          {
             id: 1,
-            title: "brand template",
+            title: "Progress Bar",
+            href: "/services",
+         },
+         {
+            id: 2,
+            title: "Quiz Progress",
             href: "/services",
          },
       ]
