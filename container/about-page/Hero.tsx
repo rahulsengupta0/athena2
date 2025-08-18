@@ -33,7 +33,7 @@ export default function Hero() {
 										/>
 									</motion.span>
 									<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">
-										OCHI DESIGN
+										Athena LMS
 									</h1>
 								</div>
 							</h1>

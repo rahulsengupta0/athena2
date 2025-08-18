@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-import { logo } from "@/public";
 import { useState } from "react";
 import { navVariants } from "@/motion";
 import { TextHover } from "@/animation";
@@ -26,17 +24,18 @@ export default function Navbar() {
 			<motion.nav
 				variants={navVariants}
 				className="w-full h-[8vh] padding-x fixed top-0 left-0 z-50 backdrop-blur-[7px] flex items-center justify-between sm:hidden xm:hidden md:hidden"
-				animate={hidden ? "hidden" : "vissible"}>
+				animate={hidden ? "hidden" : "vissible"}
+			>
+				{/* ✅ Logo replaced with text */}
 				<div className="w-[50%]">
 					<Link href={"/"}>
-						<Image
-							src={logo}
-							alt="ochi logo"
-							width={70}
-							height={70}
-						/>
+					<h1 className="text-2xl font-extrabold font-sans uppercase tracking-wide text-black">
+  Athena <span className="text-black">LMS</span>
+</h1>
+
 					</Link>
 				</div>
+
 				<div className="flex gap-x-[20px] w-[50%]">
 					{navbarItems.map((item) => (
 						<Link
@@ -44,7 +43,8 @@ export default function Navbar() {
 							className={`w-fit paragraph font-medium font-NeueMontreal text-secondry capitalize flex flex-col hover ${
 								item.id === 5 && "ml-auto"
 							}`}
-							href={item.href}>
+							href={item.href}
+						>
 							<TextHover
 								titile1={item.title}
 								titile2={item.title}
