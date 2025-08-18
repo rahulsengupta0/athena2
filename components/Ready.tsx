@@ -8,7 +8,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 
 export default function Ready() {
 	const container = useRef(null);
-	const phrase = ["Ready", "to start", "the project"];
+	const phrase = ["Ready", "to start", "your journey"];
 
 	const { scrollYProgress } = useScroll({
 		target: container,
@@ -18,8 +18,10 @@ export default function Ready() {
 
 	return (
 		<section
-			className="w-full relative z-30 min-h-screen sm:h-screen xm:h-screen bg-about padding-y rounded-t-[20px] mt-[-20px]"
-			ref={container}>
+  className="w-full relative z-30 min-h-screen sm:h-screen xm:h-screen padding-y rounded-t-[20px] mt-[-20px]"
+  ref={container}
+  style={{ backgroundColor: "#6495ED" }}>
+
 			<div className="w-full h-full flex justify-center gap-[50px] items-center flex-col">
 				<div className="flex flex-col gap-[10px]">
 					<h1 className="text-[290px] leading-[230px] lg:text-[220px] lg:leading-[170px] md:text-[180px] md:leading-[140px] sm:text-[120px] sm:leading-[90px] xm:text-[80px] xm:leading-[60px] tracking-[-2.5px] text-center font-bold font-FoundersGrotesk text-secondry uppercase pointer-events-none">
@@ -45,7 +47,7 @@ export default function Ready() {
 								className="py-[6px]"
 								backgroundColor="#212121">
 								<p className="z-10 px-[10px] ml-[15px] py-[6px] group-hover:text-white text-black">
-									hello@ochi.design
+									Athen@LMS
 								</p>
 								<div className="bg-black group-hover:bg-white text-black p-[10px] rounded-full scale-[0.3] mr-[10px] group-hover:scale-[0.9] transition-all z-10 transform duration-[0.3s] ease-[.215,.61,.355,1]">
 									<ArrowUpRight
