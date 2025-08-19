@@ -1,129 +1,137 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
+
 import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { clientsItem } from "@/constants";
 import { Button, Ratings } from "@/components";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function Clients() {
-	const [activeAccordion, setActiveAccordion] = useState(clientsItem[0].id);
-	const toggleAccordion = (itemId: any) => {
-		setActiveAccordion((prev) => (prev === itemId ? null : itemId));
-	};
+  const [activeIndex, setActiveIndex] = useState(0);
 
-	return (
-		<section className="w-full padding-y">
-			<h1 className="sub-heading padding-x font-medium font-NeueMontreal text-secondry pb-[50px]">
-				Clients’ reviews
-			</h1>
-			{clientsItem.map((item) => (
-				<div
-					key={item.id}
-					className={`w-full flex py-[10px] flex-col ${
-						item.id == 1
-							? "border-y border-[#21212155]"
-							: "border-b border-[#21212155]"
-					}`}>
-					<div className="w-full flex items-center justify-between py-[10px] padding-x">
-						<div className="w-[50%] flex items-center">
-							<div className="w-[40%] sm:w-auto xm:w-auto">
-								<Link
-									href={item.href}
-									className="small-text font-normal font-NeueMontreal text-secondry link-flash">
-									{item.website}
-								</Link>
-							</div>
-							<div className="w-auto sm:hidden xm:hidden">
-								<motion.h3
-									className={`small-text font-normal font-NeueMontreal text-secondry ${
-										activeAccordion === item.id ? "opacity-100" : "opacity-0"
-									} opacity-0 transition-all duration-200 ease-in-out`}>
-									{item.title}
-								</motion.h3>
-							</div>
-						</div>
-						<div className="w-[50%] flex items-center justify-between">
-							<div className="w-[40%] sm:w-auto xm:w-auto">
-								<h3 className="small-text font-normal font-NeueMontreal text-secondry">
-									{item.name}
-								</h3>
-							</div>
-							<div className="w-[10%] sm:w-auto xm:w-auto flex items-end justify-end">
-								<button
-									className={`small-text font-normal font-NeueMontreal uppercase transition-all duration-200 ease-in-out ${
-										activeAccordion === item.id
-											? "text-gray-300"
-											: "text-secondry link-flash"
-									}`}
-									onClick={() => toggleAccordion(item.id)}>
-									{activeAccordion === item.id ? "read" : "read"}
-								</button>
-							</div>
-						</div>
-					</div>
+  const nextReview = () => {
+    setActiveIndex((prev) => (prev + 1) % clientsItem.length);
+  };
 
-					<div
-						className={`w-full flex justify-between padding-x  sm:flex-col xm:flex-col`}>
-						<div className="w-[20%] sm:w-auto xm:w-auto" />
-						<div className="w-[30%] sm:w-auto xm:w-auto sm:flex xm:flex flex-wrap gap-x-[5px] sm:pt-[10px] xm:pt-[10px]">
-							{item.links.map((link) => (
-								<AnimatePresence key={link.id}>
-									{activeAccordion === item.id && (
-										<motion.div
-											initial={{ opacity: 0, height: 0 }}
-											animate={{ opacity: 1, height: "auto" }}
-											exit={{ opacity: 0, height: 0 }}
-											transition={{
-												ease: [0.4, 0, 0.2, 1],
-												duration: 1,
-											}}>
-											<Button
-												href={link.href}
-												title={link.title}
-												key={link.id}
-											/>
-										</motion.div>
-									)}
-								</AnimatePresence>
-							))}
-						</div>
-						<div className="w-[40%] sm:w-auto xm:w-auto">
-							<AnimatePresence>
-								{activeAccordion === item.id && (
-									<motion.div
-										initial={{ opacity: 0, height: 0 }}
-										animate={{ opacity: 1, height: "auto" }}
-										exit={{ opacity: 0, height: 0 }}
-										transition={{
-											ease: [0.4, 0, 0.2, 1],
-											duration: 1.3,
-										}}>
-										<div className="flex flex-col gap-[20px] py-[30px]">
-											<div className="w-[130px] h-[130px]">
-												<Image
-													src={item.src}
-													alt="clientImg"
-													className="w-full h-full object-cover rounded-[10px]"
-												/>
-											</div>
-											<div className="">
-												<p className="small-text tracking-wider font-normal font-NeueMontreal text-secondry">
-													{item.review}
-												</p>
-											</div>
-										</div>
-									</motion.div>
-								)}
-							</AnimatePresence>
-						</div>
-						<div className="w-[10%] sm:w-auto xm:w-auto" />
-					</div>
-				</div>
-			))}
-			<div className="padding-x pt-[80px]">
-				<Ratings />
-			</div>
-		</section>
-	);
+  const prevReview = () => {
+    setActiveIndex((prev) =>
+      prev === 0 ? clientsItem.length - 1 : prev - 1
+    );
+  };
+
+  return (
+    <section className="relative w-full py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold font-NeueMontreal text-gray-900 mb-12"
+        >
+          What our clients say
+        </motion.h1>
+
+        {/* Review Carousel */}
+        <div className="relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={clientsItem[activeIndex].id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="flex flex-col items-center gap-8"
+            >
+              {/* Client Image */}
+              <div className="w-[120px] h-[120px] relative">
+                <Image
+                  src={clientsItem[activeIndex].src}
+                  alt={clientsItem[activeIndex].name}
+                  className="rounded-full object-cover shadow-lg"
+                  fill
+                />
+              </div>
+
+              {/* Review Text */}
+              <p className="max-w-3xl text-lg md:text-xl text-gray-700 leading-relaxed italic">
+                “{clientsItem[activeIndex].review}”
+              </p>
+
+              {/* Client Info */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {clientsItem[activeIndex].name}
+                </h3>
+                <span className="text-sm text-gray-500">
+                  {clientsItem[activeIndex].title}
+                </span>
+                <a
+                  href={clientsItem[activeIndex].href}
+                  target="_blank"
+                  className="text-blue-600 hover:underline text-sm mt-1"
+                >
+                  {clientsItem[activeIndex].website}
+                </a>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-6 mt-6">
+                {clientsItem[activeIndex].links.map((link) => (
+                  <Button key={link.id} href={link.href} title={link.title} />
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navigation Arrows */}
+          <div className="absolute top-1/2 left-0 -translate-y-1/2">
+            <button
+              onClick={prevReview}
+              className="p-3 bg-white shadow-md rounded-full hover:bg-gray-100"
+            >
+              ◀
+            </button>
+          </div>
+          <div className="absolute top-1/2 right-0 -translate-y-1/2">
+            <button
+              onClick={nextReview}
+              className="p-3 bg-white shadow-md rounded-full hover:bg-gray-100"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+
+        {/* Thumbnails */}
+        <div className="flex justify-center gap-4 mt-10">
+          {clientsItem.map((item, index) => (
+            <motion.button
+              key={item.id}
+              onClick={() => setActiveIndex(index)}
+              className={`w-14 h-14 rounded-full overflow-hidden border-2 transition-all ${
+                activeIndex === index
+                  ? "border-blue-500 scale-110"
+                  : "border-gray-200 opacity-70"
+              }`}
+              whileHover={{ scale: 1.1 }}
+            >
+              <Image
+                src={item.src}
+                alt={item.name}
+                width={56}
+                height={56}
+                className="object-cover"
+              />
+            </motion.button>
+          ))}
+        </div>
+
+        {/* Ratings */}
+        <div className="mt-16">
+          <Ratings />
+        </div>
+      </div>
+    </section>
+  );
 }
