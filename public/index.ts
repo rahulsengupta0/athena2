@@ -29,7 +29,7 @@ export { default as brand03 } from './brand03.png';
 export { default as publication1 } from './publication1.jpeg';
 export { default as publication2 } from './publication2.png';
 export { default as publication3 } from './publication3.png';
-export { default as ochiside } from './ochi-side.jpg';
+export { default as ochiside } from './AthenaDash.png';
 export { default as eyeplay } from './eyeplay.svg';
 export { default as contactHero } from './contacthhero.jpg';
 export { default as AthenaDas} from './AthenaDash.png';

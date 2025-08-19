@@ -10,7 +10,8 @@ import { Eyes } from "@/components";
 
 export default function Socials() {
 	const [rotate, setRotate] = useState(0);
-	const phrase = ["INSTAGRAM", "behance", "facebook", "linkedin"];
+	const phrase = ["INSTAGRAM", "facebook", "linkedin"];
+
 	useEffect(() => {
 		window.addEventListener("mousemove", (e) => {
 			let mouseX = e.clientX;
@@ -23,17 +24,18 @@ export default function Socials() {
 			setRotate(angle - 280);
 		});
 	}, []);
-	const container = useRef(null);
 
+	const container = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: container,
 		offset: ["start end", "end start"],
 	});
-
 	const mq = useTransform(scrollYProgress, [0, 1], [0, -700]);
+
 	return (
 		<section
-			className="w-full min-h-screen sm:h-screen xm:h-screen bg-about padding-y relative"
+			className="w-full min-h-screen sm:h-screen xm:h-screen bg-blue-200 padding-y relative"
+
 			ref={container}>
 			<div className="w-full h-full flex justify-center gap-[50px] items-center flex-col">
 				<div className="flex flex-col gap-[10px] pb-[50px]">
@@ -54,26 +56,10 @@ export default function Socials() {
 									L:
 								</h1>
 								<div className="flex flex-col gap-y-[10px]">
-									<LinkHover
-										className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium  capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]"
-										title={`202-1965 W 4th Awe`}
-										href="/"
-									/>
-									<LinkHover
-										className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium  capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]"
-										title={`Vancouver, Canada`}
-										href="/"
-									/>
-									<LinkHover
-										className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium  capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]"
-										title="30 Chukarina"
-										href="/"
-									/>
-									<LinkHover
-										className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium  capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]"
-										title="St Lviv, Ukraine"
-										href="/"
-									/>
+									<LinkHover title={`202-1965 W 4th Awe`} href="/" />
+									<LinkHover title={`Vancouver, Canada`} href="/" />
+									<LinkHover title="30 Chukarina" href="/" />
+									<LinkHover title="St Lviv, Ukraine" href="/" />
 								</div>
 							</div>
 							<div className="flex w-fit h-fit gap-x-[5px] group">
@@ -86,10 +72,7 @@ export default function Socials() {
 								</div>
 								<div className="w-[33px] flex items-center justify-center h-[33px] border-[2px] border-[#21212155] rounded-[50px] group-hover:bg-secondry transition-all duration-200 ease-in cursor-pointer sm:hidden xm:hidden">
 									<p className="paragraph font-normal text-secondry group-hover:text-background">
-										<ArrowUpRight
-											size={24}
-											strokeWidth={1.25}
-										/>
+										<ArrowUpRight size={24} strokeWidth={1.25} />
 									</p>
 								</div>
 							</div>
