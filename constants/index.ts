@@ -38,11 +38,6 @@ export const footerItems = [
       href: "https://www.instagram.com/",
    },
    {
-      id: 2,
-      title: "Behance",
-      href: "https://www.behance.com/",
-   },
-   {
       id: 3,
       title: "Facebook",
       href: "https://www.facebook.com/",
@@ -75,11 +70,7 @@ export const footernavbarItems = [
       title: "About us",
       href: "ochi-team",
    },
-   {
-      id: 5,
-      title: "Insights",
-      href: "insights",
-   },
+
    {
       id: 6,
       title: "Contact us",
@@ -113,31 +104,9 @@ export const clientsItem = [
          },
       ]
    },
+
    {
       id: 2,
-      website: "Planetly",
-      href: "https://www.planetly.com",
-      title: "Services:",
-      name: "Nina Walloch",
-      src: client02,
-      review: [
-         "Customizable Course Templates",
-         "Brand Integration",
-         "Scalable for Large Teams",
-         "Ongoing Support"
-      ],
-      links: [
-         { id: 1, title: "agency", href: "/services" },
-         { id: 2, title: "big news deck", href: "/services" },
-         { id: 3, title: "branded template", href: "/services" },
-         { id: 4, title: "investor deck", href: "/services" },
-         { id: 5, title: "product presentation", href: "/services" },
-         { id: 6, title: "sales deck", href: "/services" },
-         { id: 7, title: "startup pitch", href: "/services" },
-      ]
-   },
-   {
-      id: 3,
       website: "Workiz Easy",
       href: "https://www.workiz.com",
       title: "Services:",
@@ -157,7 +126,7 @@ export const clientsItem = [
       ]
    },
    {
-      id: 4,
+      id: 3,
       website: "Premium Blend",
       href: "https://www.premium-blend.com",
       title: "Services:",
@@ -174,7 +143,7 @@ export const clientsItem = [
       ]
    },
    {
-      id: 5,
+      id: 4,
       website: "Hypercare Systems",
       href: "https://www.hypercare-systems.com",
       title: "Services:",
@@ -191,7 +160,7 @@ export const clientsItem = [
       ]
    },
    {
-      id: 6,
+      id: 5,
       website: "Officevibe",
       href: "https://www.officevibe.com",
       title: "Services:",
@@ -206,45 +175,10 @@ export const clientsItem = [
          { id: 1, title: "branded template deck", href: "/services" },
       ]
    },
+   
+  
    {
-      id: 7,
-      website: "Orderlion",
-      href: "https://www.orderlion.com",
-      title: "Services:",
-      name: "Stefan Strohmer",
-      src: client07,
-      review: [
-         "Innovative Design",
-         "Iterative Development",
-         "Strategic Guidance"
-      ],
-      links: [
-         { id: 1, title: "agency", href: "/services" },
-         { id: 2, title: "investor deck", href: "/services" },
-         { id: 3, title: "product presentation", href: "/services" },
-         { id: 4, title: "review", href: "/services" },
-         { id: 5, title: "sales deck", href: "/services" },
-      ]
-   },
-   {
-      id: 8,
-      website: "Black Book",
-      href: "https://www.blackbookapp.co",
-      title: "Services:",
-      name: "Jacki Smith",
-      src: client08,
-      review: [
-         "Clear Product Messaging",
-         "Smooth Collaboration",
-         "Milestone Tracking"
-      ],
-      links: [
-         { id: 1, title: "review", href: "/services" },
-         { id: 2, title: "startup pitch", href: "/services" },
-      ]
-   },
-   {
-      id: 9,
+      id: 6,
       website: "Trawa Energy",
       href: "https://www.blackbookapp.co",
       title: "Services:",
