@@ -4,19 +4,20 @@ import {AthenaDas,capaybilities1, capaybilities2, capaybilities3, capaybilities4
 export const navbarItems = [
    {
       id: 1,
-      title: "Services",
-      href: "/services",
-   },
-   {
-      id: 2,
-      title: "Our work",
-      href: "/presentation",
-   },
-   {
-      id: 3,
       title: "About us",
       href: "/ochi-team",
    },
+   {
+      id: 2,
+      title: "Features",
+      href: "/services",
+   },
+   {
+      id: 3,
+      title: "Our work",
+      href: "/presentation",
+   },
+   
    {
       id: 4,
       title: "Insights",
