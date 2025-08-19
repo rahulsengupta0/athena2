@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Footer, Navbar } from "@/components";
 import { AnimatePresence } from "framer-motion";
+import FloatingChatbot from "./FloatingChatbot";
 
 export default function App({
 	Component,
@@ -20,6 +21,7 @@ export default function App({
 					{...pageProps}
 				/>
 			</AnimatePresence>
+			<FloatingChatbot/>
 			<Footer />
 		</>
 	);
