@@ -14,13 +14,13 @@ export const navbarItems = [
    },
    {
       id: 3,
-      title: "Our work",
+      title: "Why Us",
       href: "/presentation",
    },
    
    {
       id: 4,
-      title: "Insights",
+      title: "FAQ",
       href: "/insights",
    },
    {

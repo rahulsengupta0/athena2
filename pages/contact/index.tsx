@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { Curve } from "@/components";
-import { Herocontact, Form, FAQ, Socials } from "@/container";
+import { Herocontact, Form, Socials } from "@/container";
 
 export default function Contact() {
 	useEffect(() => {
@@ -16,7 +16,6 @@ export default function Contact() {
 				<Herocontact />
 				<Form />
 				<Socials />
-				<FAQ />
 			</Curve>
 		</>
 	);

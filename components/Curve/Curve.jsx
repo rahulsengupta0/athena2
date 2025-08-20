@@ -6,10 +6,10 @@ import { text, curve, translate } from "@/motion";
 
 const routes = {
 	"/": "Home",
-	"/services": "Services",
-	"/presentation": "Our Work",
+	"/services": "Features",
+	"/presentation": "Why Us",
 	"/ochi-team": "About Us",
-	"/insights": "Insights",
+	"/insights": "FAQ",
 	"/contact": "Contact Us",
 	"/case": "Workiz Easy",
 };
