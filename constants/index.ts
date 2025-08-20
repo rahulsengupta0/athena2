@@ -736,222 +736,222 @@ export const achiveItems = [
 // presentation page
 
 export const presentationProjectItem = [
-   {
-      id: 1,
-      title: "fyde",
-      src: project1,
-      href: "/case/",
-      links: [
-         {
-            id: 1,
-            title: "audit",
-            href: "/services",
-         },
-         {
-            id: 2,
-            title: "copywriting",
-            href: "services",
-         },
-         {
-            id: 3,
-            title: "sales deck",
-            href: "services",
-         },
-         {
-            id: 4,
-            title: "slides design",
-            href: "services",
-         },
-      ]
-   },
-   {
-      id: 2,
-      title: "trawa",
-      src: project3,
-      href: "/case/",
-      links: [
-         {
-            id: 1,
-            title: "brand identity",
-            href: "/services",
-         },
-         {
-            id: 2,
-            title: "design research",
-            href: "services",
-         },
-         {
-            id: 3,
-            title: "investor deck",
-            href: "services",
-         },
-      ]
-   },
-   {
-      id: 3,
-      title: "premium blend",
-      src: project4,
-      href: "/case/",
-      links: [
-         {
-            id: 1,
-            title: "brand template",
-            href: "/services",
-         },
-      ]
-   },
-   {
-      id: 4,
-      title: "planetly",
-      src: project5,
-      href: "/case/",
-      links: [
-         {
-            id: 1,
-            title: "brand template",
-            href: "/services",
-         },
-         {
-            id: 2,
-            title: "big news deck",
-            href: "/services",
-         },
-         {
-            id: 3,
-            title: "branded template",
-            href: "/services",
-         },
-         {
-            id: 4,
-            title: "investor deck",
-            href: "/services",
-         },
-         {
-            id: 5,
-            title: "policy deck & playbook",
-            href: "/services",
-         },
-         {
-            id: 6,
-            title: "sales deck",
-            href: "/services",
-         },
-      ]
-   },
-   {
-      id: 5,
-      title: "black box",
-      src: project8,
-      href: "/case/",
-      links: [
-         {
-            id: 1,
-            title: "investor deck",
-            href: "/services",
-         },
-         {
-            id: 2,
-            title: "redesign",
-            href: "/services",
-         },
-         {
-            id: 3,
-            title: "review",
-            href: "/services",
-         },
-      ]
-   },
-   {
-      id: 6,
-      title: "vise",
-      src: project2,
-      href: "/case/",
-      links: [
-         {
-            id: 1,
-            title: "agency",
-            href: "/services",
-         },
-         {
-            id: 2,
-            title: "compony presentation",
-            href: "services",
-         },
-      ]
-   },
-   {
-      id: 7,
-      title: "soft start",
-      src: project9,
-      href: "/case/",
-      links: [
-         {
-            id: 1,
-            title: "brand template",
-            href: "/services",
-         },
-         {
-            id: 2,
-            title: "sales desc",
-            href: "/services",
-         },
-      ]
-   },
-   {
-      id: 8,
-      title: "officevibe",
-      src: project7,
-      href: "/case/",
-      links: [
-         {
-            id: 1,
-            title: "brand template",
-            href: "/services",
-         },
-      ]
-   },
-   {
-      id: 9,
-      title: "workiz easy",
-      src: project6,
-      href: "/case/",
-      links: [
-         {
-            id: 1,
-            title: "onboarding presentation",
-            href: "/services",
-         },
-         {
-            id: 2,
-            title: "policy deck & playbook",
-            href: "/services",
-         },
-         {
-            id: 3,
-            title: "sales deck",
-            href: "/services",
-         },
-      ]
-   },
+  {
+    id: 1,
+    title: "Student Dashboard",
+    src: project1,
+    href: "/case/",
+    links: [
+      {
+        id: 1,
+        title: "audit",
+        href: "/services",
+      },
+      {
+        id: 2,
+        title: "copywriting",
+        href: "/services",
+      },
+      {
+        id: 3,
+        title: "sales deck",
+        href: "/services",
+      },
+      {
+        id: 4,
+        title: "slides design",
+        href: "/services",
+      },
+    ]
+  },
+  {
+    id: 2,
+    title: "Learning Modules",
+    src: project3,
+    href: "/case/",
+    links: [
+      {
+        id: 1,
+        title: "brand identity",
+        href: "/services",
+      },
+      {
+        id: 2,
+        title: "design research",
+        href: "/services",
+      },
+      {
+        id: 3,
+        title: "investor deck",
+        href: "/services",
+      },
+    ]
+  },
+  {
+    id: 3,
+    title: "Analytics & Reports",
+    src: project4,
+    href: "/case/",
+    links: [
+      {
+        id: 1,
+        title: "brand template",
+        href: "/services",
+      },
+    ]
+  },
+  {
+    id: 4,
+    title: "Certifications",
+    src: project5,
+    href: "/case/",
+    links: [
+      {
+        id: 1,
+        title: "brand template",
+        href: "/services",
+      },
+      {
+        id: 2,
+        title: "big news deck",
+        href: "/services",
+      },
+      {
+        id: 3,
+        title: "branded template",
+        href: "/services",
+      },
+      {
+        id: 4,
+        title: "investor deck",
+        href: "/services",
+      },
+      {
+        id: 5,
+        title: "policy deck & playbook",
+        href: "/services",
+      },
+      {
+        id: 6,
+        title: "sales deck",
+        href: "/services",
+      },
+    ]
+  },
+  {
+    id: 5,
+    title: "Assignments & Submissions",
+    src: project8,
+    href: "/case/",
+    links: [
+      {
+        id: 1,
+        title: "investor deck",
+        href: "/services",
+      },
+      {
+        id: 2,
+        title: "redesign",
+        href: "/services",
+      },
+      {
+        id: 3,
+        title: "review",
+        href: "/services",
+      },
+    ]
+  },
+  {
+    id: 6,
+    title: "Course Schedule",
+    src: project2,
+    href: "/case/",
+    links: [
+      {
+        id: 1,
+        title: "agency",
+        href: "/services",
+      },
+      {
+        id: 2,
+        title: "company presentation",
+        href: "/services",
+      },
+    ]
+  },
+  {
+    id: 7,
+    title: "Getting Started Guide",
+    src: project9,
+    href: "/case/",
+    links: [
+      {
+        id: 1,
+        title: "brand template",
+        href: "/services",
+      },
+      {
+        id: 2,
+        title: "sales desc",
+        href: "/services",
+      },
+    ]
+  },
+  {
+    id: 8,
+    title: "Instructor Portal",
+    src: project7,
+    href: "/case/",
+    links: [
+      {
+        id: 1,
+        title: "brand template",
+        href: "/services",
+      },
+    ]
+  },
+  {
+    id: 9,
+    title: "Learning Experience",
+    src: project6,
+    href: "/case/",
+    links: [
+      {
+        id: 1,
+        title: "onboarding presentation",
+        href: "/services",
+      },
+      {
+        id: 2,
+        title: "policy deck & playbook",
+        href: "/services",
+      },
+      {
+        id: 3,
+        title: "sales deck",
+        href: "/services",
+      },
+    ]
+  },
 ];
 
 
 export const publicationItems = [
-   {
-      id: 1,
-      title: "officevibe ppt template",
-      src: publication1
-   },
-   {
-      id: 2,
-      title: "trawa energy pitch deck",
-      src: publication2
-   },
-   {
-      id: 3,
-      title: "tech for ukraine",
-      src: publication3
-   },
+   {
+      id: 1,
+      title: "Employee Engagement Template",
+      src: publication1
+   },
+   {
+      id: 2,
+      title: "Energy Sector Training Pitch Deck",
+      src: publication2
+   },
+   {
+      id: 3,
+      title: "Tech Initiatives for Education",
+      src: publication3
+   },
 ];
 
 // insights page constants

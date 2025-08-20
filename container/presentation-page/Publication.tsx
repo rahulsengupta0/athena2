@@ -4,10 +4,11 @@ import { publicationItems } from "@/constants";
 
 export default function Publication() {
 	return (
-		<section className="w-full bg-marquee padding-y rounded-t-[20px] mt-[-10px] z-30 relative">
-			<div className="w-full bg-marquee z-10 relative">
+		<section className="w-full bg-[#005A9C] padding-y rounded-t-[20px] mt-[-10px] z-30 relative">
+  <div className="w-full bg-[#005A9C] z-10 relative">
+
 				<Marquee
-					title="behance"
+					title="why athena"
 					className="pb-[50px] lg:pb-[40px] md:pb-[30px] sm:pb-[20px] xm:pb-[15px] text-[540px] leading-[330px] lg:text-[380px] lg:leading-[240px] md:text-[300px] md:leading-[160px] sm:text-[230px] sm:leading-[140px] xm:text-[130px] xm:leading-[80px]"
 				/>
 			</div>
