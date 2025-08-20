@@ -9,14 +9,14 @@ export default function Insights() {
 				<div className="w-full flex flex-col">
 					<div className="padding-x pb-[30px]">
 						<h2 className="sub-heading font-normal tracking-[-1.3px] text-[#212121] font-NeueMontreal">
-							Insights
+							Learning Insights
 						</h2>
 					</div>
 					<div className="w-full border-t border-[#21212155] pt-[20px]">
 						<div className="w-full flex sm:flex-col xm:flex-col sm:gap-[20px] xm:gap-[20px] padding-x">
 							<div className="w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
 								<h3 className="text-[20px] leading-[30px] font-medium text-secondry font-NeueMontreal">
-									Latest publication:
+									Latest from our learning lab:
 								</h3>
 							</div>
 							<div className="w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
@@ -53,8 +53,8 @@ export default function Insights() {
 											</div>
 											<div className="flex flex-col gap-[7px]">
 												<h3 className="text-[20px] leading-[30px] font-NeueMontreal font-normal text-secondry">
-													Presenting to an International Audience: <br /> Tips
-													and Lessons Learned.
+													Engaging Learners at Scale: <br /> Strategies for
+													Modern Training Delivery
 												</h3>
 												<p className="text-[20px] leading-[30px] font-NeueMontreal font-normal text-gray-400">
 													{item.subTitle}

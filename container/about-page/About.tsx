@@ -9,16 +9,16 @@ export default function About() {
 					<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col gap-[30px]">
 						<div>
 							<h3 className="paragraph font-medium text-secondry font-NeueMontreal">
-								We are ochi design:
+								We are Athena LMS:
 							</h3>
 						</div>
 						<div className="w-[48%] sm:w-full xm:w-full flex justify-between">
 							<div className="w-[50%] sm:w-full xm:w-full flex flex-col gap-y-[40px]">
 								<div className="flex flex-col gap-y-[20px]">
 									<p className="paragraph font-NeueMontreal text-secondry">
-										The team of designers, storytellers, and
-										<br /> passionate collaborators, who work
-										<br /> together to create industry-shifting <br />
+										Athena LMS transforms the way teams learn,
+										<br />  share, and grow.We combine design,
+										<br /> interactivity, and deep insights to empower businesses with impactful learning journeys. <br />
 										presentations that win people&apos;s hearts
 										<br />
 										and minds.
@@ -26,10 +26,10 @@ export default function About() {
 								</div>
 								<div className="flex flex-col gap-y-[20px]">
 									<p className="paragraph font-NeueMontreal text-secondry">
-										And we strive to become one of the most
+										Our philosophy is simple: knowledge should be immersive, intuitive, and inspiring.
 										<br />
-										recognizable & influential presentation
-										<br /> agencies of the time who does that.
+										That's why we built Athena — to help businesses educate 
+										<br /> with elegance and scale with confidence.
 									</p>
 								</div>
 							</div>

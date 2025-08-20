@@ -7,7 +7,7 @@ export default function Principles() {
 			<div>
 				<h1 className="sub-heading padding-x font-medium font-NeueMontreal text-secondry mb-[50px]">
 					Two principles we stand behind in
-					<br className="sm:hidden xm:hidden" /> every part of our work:
+					<br className="sm:hidden xm:hidden" /> every part of our learning journey:
 				</h1>
 			</div>
 			<div className="w-full border-t border-[#21212155]">
@@ -20,10 +20,10 @@ export default function Principles() {
 						/>
 						<div className="flex flex-col gap-[20px]">
 							<p className="paragraph font-NeueMontreal text-secondry">
-								Whether the presentation needs to convince or <br />
-								educate it always has to change audience
-								<br /> perception. We seek insights to make decks
-								<br /> unexpectedly enlightening for our audience.
+								Learning should spark transformation. <br />
+								Our courses are designed to shift perception, <br />
+								build clarity, and empower learners with <br />
+								practical, meaningful knowledge.
 							</p>
 						</div>
 					</div>
@@ -35,10 +35,10 @@ export default function Principles() {
 						/>
 						<div className="flex flex-col gap-[20px]">
 							<p className="paragraph font-NeueMontreal text-secondry">
-								The presentation helps to see what&apos;s hidden,
-								<br /> unseen, or simply never known before. We use <br />
-								design to drive their attention, focus them to <br />
-								clearly see, and help them feel the message.
+								Great learning reveals the unseen. <br />
+								We use thoughtful design and content <br />
+								structure to guide focus, spark curiosity, <br />
+								and deliver lasting understanding.
 							</p>
 						</div>
 					</div>

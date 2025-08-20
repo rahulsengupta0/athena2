@@ -47,11 +47,11 @@ export default function Hero() {
             <motion.div
               initial={{ scale: 0, rotate: -45 }}
               animate={{ scale: 1, rotate: 0 }}
-              transition={{ 
-                delay: 0.8, 
-                type: "spring", 
+              transition={{
+                delay: 0.8,
+                type: "spring",
                 stiffness: 200,
-                damping: 10
+                damping: 10,
               }}
               className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
               whileHover={{ scale: 1.05 }}
@@ -64,7 +64,7 @@ export default function Hero() {
                 className="h-[90px] w-auto object-cover rounded-xl"
               />
             </motion.div>
-            <motion.span 
+            <motion.span
               className="heading font-FoundersGrotesk text-[#0f172a]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -78,52 +78,15 @@ export default function Hero() {
 
       {/* Content Row */}
       <div className="flex flex-col lg:flex-row items-center justify-between padding-x gap-12 mt-16 relative">
-        {/* Left - About */}
+        {/* Left - (Removed About Section) */}
         <motion.div
           initial={{ x: -80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
           className="lg:w-1/2 w-full flex flex-col gap-8 relative z-10"
         >
-          <motion.h3
-            className="text-lg font-semibold text-[#0f172a] font-NeueMontreal"
-            whileInView={{ 
-              x: [-20, 0],
-              opacity: [0, 1]
-            }}
-            transition={{ duration: 0.6 }}
-          >
-            About Athena LMS
-          </motion.h3>
-          
-          <motion.p 
-            className="paragraph text-[#1e293b] font-NeueMontreal leading-relaxed"
-            whileInView={{ 
-              x: [-20, 0],
-              opacity: [0, 1]
-            }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Athena LMS transforms the way teams learn, share, and grow.  
-            We combine design, interactivity, and deep insights to empower 
-            businesses with impactful learning journeys.
-          </motion.p>
-          
-          <motion.p 
-            className="paragraph text-[#1e293b] font-NeueMontreal leading-relaxed"
-            whileInView={{ 
-              x: [-20, 0],
-              opacity: [0, 1]
-            }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Our philosophy is simple: knowledge should be immersive, intuitive,
-            and inspiring. That's why we built Athena — to help businesses 
-            educate with elegance and scale with confidence.
-          </motion.p>
-
           {/* CTA Buttons */}
-          <motion.div 
+          <motion.div
             className="flex gap-4 items-center"
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -169,12 +132,12 @@ export default function Hero() {
         className="padding-x pb-16 relative z-10"
       >
         <h2 className="sub-heading font-medium font-NeueMontreal text-[#0f172a]">
-  We transform complex ideas into{" "} engaging learning experiences.
-</h2>
+          We transform complex ideas into{" "} engaging learning experiences.
+        </h2>
       </motion.div>
 
       {/* Floating CTA at bottom */}
-      <motion.div 
+      <motion.div
         className="fixed bottom-8 right-8 z-50"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
