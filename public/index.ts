@@ -57,7 +57,7 @@ export { default as latest2 } from './latest2.jpeg';
 
 // ochi-team
 export { default as backgroundAbout } from './background-about.jpeg';
-export { default as Team1 } from './team1.jpeg';
+export { default as Paul } from './Paul.jpeg';
 export { default as Team2 } from './team2.jpeg';
 export { default as Team3 } from './team3.jpeg';
 export { default as Team4 } from './team4.png';

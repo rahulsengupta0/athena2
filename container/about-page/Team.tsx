@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Team1, logo } from "@/public";
+import { Paul, logo } from "@/public";
 import { Marquee } from "@/components";
 
 export default function Team() {
@@ -16,17 +16,13 @@ export default function Team() {
 				<div className="w-[80%] p-[20px] bg-background rounded-[20px] sm:w-full  xm:w-full">
 					<div className="w-full flex flex-col justify-between gap-[20px] py-[10px]">
 						<div className="flex justify-between sm:flex-col xm:flex-col gap-[20px]">
+							<div className="text-black font-bold text-xl tracking-wide">
+  ATHENA <span className="text-blue-400">LMS</span>
+</div>
+
 							<div>
 								<Image
-									src={logo}
-									alt="ochi-logo"
-									width={50}
-									height={50}
-								/>
-							</div>
-							<div>
-								<Image
-									src={Team1}
+									src={Paul}
 									alt="ochi-logo"
 									width={300}
 									height={300}
