@@ -8,7 +8,8 @@ export default function Capibilyties() {
 	const [hovered, setHovered] = useState(false);
 	const [hovered1, setHovered1] = useState(false);
 	return (
-		<div className="w-full bg-about padding-y rounded-t-[20px]">
+		<div className="w-full padding-y rounded-t-[20px]" style={{ backgroundColor: '#6495ED' }}>
+
 			<div className="w-[82%] sm:w-full xm:w-full padding-x mb-[70px]">
 				<h1 className="sub-heading font-medium font-NeueMontreal text-secondry">
 					<span className="xl:link-flash lg:link-flash md:link-flash cursor-pointer">

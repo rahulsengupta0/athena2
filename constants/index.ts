@@ -298,7 +298,7 @@ export const serviceProcessItems = [
       phase: "01. Phase",
       name: "Discovery",
       src: phase1,
-      review: "We define your goals, get to know your audience, and understand the context. Through a process of exploration, investigation, and research, we seek the insights that inform our future decisions.",
+      review: "We identify your learning objectives, understand your learners, and analyze the educational context. This research forms the foundation for a tailored and effective LMS solution.",
       button: "read"
    },
    {
@@ -306,7 +306,7 @@ export const serviceProcessItems = [
       phase: "02. Phase",
       name: "Storytelling",
       src: phase2,
-      review: "Based on the answers, previous drafts, and additional research, we will develop a foundation of the deck — the structure of the presentation. We build a tone of voice, flow, and narrative to engage our audience. Here we will win people's minds.",
+      review: "We develop the course architecture and user journey, crafting engaging content flow and interactive experiences that capture learners’ attention and boost retention.",
       button: "read"
    },
    {
@@ -314,7 +314,7 @@ export const serviceProcessItems = [
       phase: "03. Phase",
       name: "Design",
       src: phase3,
-      review: "We use design to guide our audience's attention and keep them engaged. It's not only what you want them to do, but also how you make them feel. We make sure the presentation wins people's hearts and leaves a perfect long-lasting impression.",
+      review: "We design a user-friendly interface and visuals that enhance learning, motivate users emotionally, and create an intuitive environment for learners to thrive.",
       button: "read"
    },
    {
@@ -322,7 +322,7 @@ export const serviceProcessItems = [
       phase: "04. Phase",
       name: "Feedback",
       src: phase4,
-      review: "We want to stay on the same page. Hence, each phase wraps up presenting the work to you to collect and implement your feedback if such appears.",
+      review: "At each step, we present progress and gather your feedback to ensure alignment and incorporate adjustments, optimizing the LMS to meet your needs perfectly.",
       button: "read"
    },
    {
@@ -330,7 +330,7 @@ export const serviceProcessItems = [
       phase: "05. Phase",
       name: "Delivery",
       src: phase5,
-      review: "We will carefully collect and prepare all the project files to ensure smooth future use.",
+      review: "We finalize and deploy the complete LMS solution, equipping you with all files and support for a seamless implementation and future scalability.",
       button: "read"
    },
 ];

@@ -46,7 +46,9 @@ export { default as capaybilities3 } from './capybilities3.jpeg';
 export { default as capaybilities4 } from './capybilities4.jpeg';
 export { default as capaybilities5 } from './capybilities5.jpeg';
 export { default as background } from './background.png';
-
+export { default as servicehero} from './servicehero.jpg';
+export { default as servicetop} from './servicetop.png';
+export { default as servicebg} from './servicesbg.jpg';
 // insights page assets
 
 export { default as insights1 } from './insights1.png';
