@@ -3,7 +3,7 @@ import {
 	Heroabout,
 	Aboutabout,
 	Team,
-	Partners,
+	// Partners,
 	Insights,
 	Principles,
 } from "@/container";
@@ -24,7 +24,7 @@ export default function About() {
 				<Aboutabout />
 				<Team />
 				<Principles />
-				<Partners />
+				{/* <Partners /> */}
 				<Insights />
 				<Ready />
 			</Curve>

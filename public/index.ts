@@ -34,6 +34,7 @@ export { default as eyeplay } from './eyeplay.svg';
 export { default as contactHero } from './contacthhero.jpg';
 export { default as AthenaDas} from './AthenaDash.png';
 
+
 // services page
 export { default as phase1 } from './phase1.png';
 export { default as phase2 } from './phase2.png';
@@ -58,13 +59,13 @@ export { default as latest1 } from './latest1.png';
 export { default as latest2 } from './latest2.jpeg';
 
 // ochi-team
-export { default as backgroundAbout } from './background-about.jpeg';
+export { default as backgroundAbout } from './teamm.jpg';
 export { default as Paul } from './Paul.jpeg';
 export { default as Team2 } from './team2.jpeg';
 export { default as Team3 } from './team3.jpeg';
 export { default as Team4 } from './team4.png';
-export { default as principles1 } from './principles1.jpeg';
-export { default as principles2 } from './principles2.jpeg';
+export { default as principles1 } from './education.jpg';
+export { default as principles2 } from './uncover.jpg';
 
 // workiz page
 export { default as workiz } from './workiz.jpeg';

@@ -1,45 +1,54 @@
+import { motion } from "framer-motion";
 import { backgroundAbout } from "@/public";
 import { BackgroundImg } from "@/components";
 
 export default function About() {
-	return (
-		<section className="w-full padding-y">
-			<div className="w-full flex flex-col bg-background">
-				<div className="w-full border-t border-[#21212155] pt-[20px]">
-					<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col gap-[30px]">
-						<div>
-							<h3 className="paragraph font-medium text-secondry font-NeueMontreal">
-								We are Athena LMS:
-							</h3>
-						</div>
-						<div className="w-[48%] sm:w-full xm:w-full flex justify-between">
-							<div className="w-[50%] sm:w-full xm:w-full flex flex-col gap-y-[40px]">
-								<div className="flex flex-col gap-y-[20px]">
-									<p className="paragraph font-NeueMontreal text-secondry">
-										Athena LMS transforms the way teams learn,
-										<br />  share, and grow.We combine design,
-										<br /> interactivity, and deep insights to empower businesses with impactful learning journeys. <br />
-										presentations that win people&apos;s hearts
-										<br />
-										and minds.
-									</p>
-								</div>
-								<div className="flex flex-col gap-y-[20px]">
-									<p className="paragraph font-NeueMontreal text-secondry">
-										Our philosophy is simple: knowledge should be immersive, intuitive, and inspiring.
-										<br />
-										That's why we built Athena — to help businesses educate 
-										<br /> with elegance and scale with confidence.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="padding-x pt-[100px] lg:pt-[80px] md:pt-[60px] sm:pt-[40px] xm:pt-[40px]">
-				<BackgroundImg src={backgroundAbout} />
-			</div>
-		</section>
-	);
+  return (
+    <section className="w-full relative overflow-hidden bg-background padding-y">
+      {/* Background */}
+      <div className="absolute inset-0 opacity-10">
+        <BackgroundImg src={backgroundAbout} />
+      </div>
+
+      {/* Container */}
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-20 px-6 sm:px-4">
+        {/* About Intro */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="flex flex-col lg:flex-row items-center gap-12"
+        >
+          {/* Left text */}
+          <div className="flex-1 flex flex-col gap-6">
+            <h3 className="text-3xl md:text-4xl font-bold font-NeueMontreal text-secondry">
+              We are <span className="text-primary">Athena LMS</span>
+            </h3>
+            <p className="paragraph font-NeueMontreal text-secondry leading-relaxed">
+              Athena LMS transforms the way teams learn, share, and grow.  
+              We combine design, interactivity, and deep insights to empower 
+              businesses with impactful learning journeys that win hearts and minds.
+            </p>
+            <p className="paragraph font-NeueMontreal text-secondry leading-relaxed">
+              Our philosophy is simple: knowledge should be immersive, intuitive, 
+              and inspiring. That’s why we built Athena — to help businesses 
+              educate with elegance and scale with confidence.
+            </p>
+          </div>
+
+          {/* Right visual block */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex-1 rounded-2xl shadow-xl overflow-hidden"
+          >
+            <BackgroundImg src={backgroundAbout} />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
 }
