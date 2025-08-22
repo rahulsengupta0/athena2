@@ -65,7 +65,7 @@ export { default as Team2 } from './team2.jpeg';
 export { default as Team3 } from './team3.jpeg';
 export { default as Team4 } from './team4.png';
 export { default as principles1 } from './education.jpg';
-export { default as principles2 } from './uncover.jpg';
+export { default as principles2 } from './Uncover.jpg';
 
 // workiz page
 export { default as workiz } from './workiz.jpeg';
