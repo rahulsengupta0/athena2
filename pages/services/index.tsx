@@ -1,10 +1,10 @@
 "use client";
 import {
-	Capibilyties,
-	Clientsservices,
+	// Capibilyties,
+	
 	Expectations,
 	Process,
-	Archive,
+	// Archive,
 	Heroservices,
 } from "@/container";
 import { useEffect } from "react";
@@ -22,9 +22,8 @@ export default function Services() {
 			<Curve backgroundColor={"#f1f1f1"}>
 				<Heroservices />
 				<Process />
-				<Capibilyties />
-				<Clientsservices />
-				<Archive />
+				{/* <Capibilyties /> */}
+				{/* <Archive /> */}
 				<Expectations />
 				<Ready />
 			</Curve>
