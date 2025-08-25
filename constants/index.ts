@@ -87,10 +87,10 @@ export const footernavbarItems = [
 export const clientsItem = [
    {
       id: 1,
-      website: "Karman Ventures",
-      href: "https://www.ochi.design",
-      title: "Services:",
-      name: "William Barnes",
+      website: "Athena LMS – Enterprise Training",
+      href: "/services",
+      title: "Modules:",
+      name: "Corporate Learning",
       src: client01,
       review: [
          "Personalized Learning Paths",
@@ -98,45 +98,38 @@ export const clientsItem = [
          "Guided Onboarding Experience"
       ],
       links: [
-         {
-            id: 1,
-            title: "investor deck",
-            href: "/services",
-         },
-         {
-            id: 2,
-            title: "sales deck",
-            href: "/services",
-         },
+         { id: 1, title: "Employee Training Deck", href: "/services" },
+         { id: 2, title: "Onboarding Module", href: "/services" },
       ]
    },
 
    {
       id: 2,
-      website: "Workiz Easy",
-      href: "https://www.workiz.com",
-      title: "Services:",
-      name: "Tormer levy",
+      website: "Athena LMS – Higher Education",
+      href: "/services",
+      title: "Modules:",
+      name: "Academic Programs",
       src: client03,
       review: [
-         "Seamless Onboarding",
-         "Enhanced Collaboration",
-         "Intuitive User Experience"
+         "Seamless Course Enrollment",
+         "Enhanced Collaboration Tools",
+         "Intuitive Student Experience"
       ],
       links: [
-         { id: 1, title: "compony presentation", href: "/services" },
-         { id: 2, title: "onboarding presentation", href: "/services" },
-         { id: 3, title: "policy deck and playbook", href: "/services" },
-         { id: 4, title: "redesign", href: "/services" },
-         { id: 5, title: "sales deck", href: "/services" },
+         { id: 1, title: "Course Presentation", href: "/services" },
+         { id: 2, title: "Orientation Program", href: "/services" },
+         { id: 3, title: "Policy & Guidelines Deck", href: "/services" },
+         { id: 4, title: "Platform Redesign Showcase", href: "/services" },
+         { id: 5, title: "Faculty Training Deck", href: "/services" },
       ]
    },
+
    {
       id: 3,
-      website: "Premium Blend",
-      href: "https://www.premium-blend.com",
-      title: "Services:",
-      name: "Elien Kim",
+      website: "Athena LMS – Creative Learning",
+      href: "/services",
+      title: "Modules:",
+      name: "Design & Media",
       src: client04,
       review: [
          "Creative Course Templates",
@@ -144,61 +137,62 @@ export const clientsItem = [
          "Fast Implementation"
       ],
       links: [
-         { id: 1, title: "branded template", href: "/services" },
-         { id: 2, title: "illustration", href: "/services" },
+         { id: 1, title: "Branded Templates", href: "/services" },
+         { id: 2, title: "Interactive Media Lessons", href: "/services" },
       ]
    },
+
    {
       id: 4,
-      website: "Hypercare Systems",
-      href: "https://www.hypercare-systems.com",
-      title: "Services:",
-      name: "Brendon Goss",
+      website: "Athena LMS – Healthcare Training",
+      href: "/services",
+      title: "Modules:",
+      name: "Medical Education",
       src: client05,
       review: [
          "Detailed Progress Analytics",
          "Engaging Visual Lessons",
-         "High Performance"
+         "High Performance & Compliance"
       ],
       links: [
-         { id: 1, title: "investor deck", href: "/services" },
-         { id: 2, title: "startup pitch", href: "/services" },
+         { id: 1, title: "Medical Training Deck", href: "/services" },
+         { id: 2, title: "Compliance & Policy Deck", href: "/services" },
       ]
    },
+
    {
       id: 5,
-      website: "Officevibe",
-      href: "https://www.officevibe.com",
-      title: "Services:",
-      name: "Raff Labri",
+      website: "Athena LMS – Corporate Culture",
+      href: "/services",
+      title: "Modules:",
+      name: "Employee Engagement",
       src: client06,
       review: [
          "Comprehensive Templates",
          "Stakeholder Satisfaction",
-         "Consistent Quality"
+         "Consistent Quality Training"
       ],
       links: [
-         { id: 1, title: "branded template deck", href: "/services" },
+         { id: 1, title: "Engagement Program Deck", href: "/services" },
       ]
    },
-   
-  
+
    {
       id: 6,
-      website: "Trawa Energy",
-      href: "https://www.blackbookapp.co",
-      title: "Services:",
-      name: "David Buddy",
+      website: "Athena LMS – Startups & Innovation",
+      href: "/services",
+      title: "Modules:",
+      name: "Startup Programs",
       src: client09,
       review: [
-         "Brand Alignment",
-         "Company Vision Communication",
-         "Startup Focused"
+         "Brand-Aligned Learning",
+         "Vision Communication",
+         "Startup-Focused Training"
       ],
       links: [
-         { id: 1, title: "branding", href: "/services" },
-         { id: 2, title: "investor deck", href: "/services" },
-         { id: 3, title: "startup pitch", href: "/services" },
+         { id: 1, title: "Branding Module", href: "/services" },
+         { id: 2, title: "Investor Readiness Deck", href: "/services" },
+         { id: 3, title: "Pitch Training", href: "/services" },
       ]
    },
 ];
