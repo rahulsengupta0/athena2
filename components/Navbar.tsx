@@ -16,20 +16,25 @@ export default function Navbar() {
 	const isWhiteTheme = pathname === "/" || pathname === "/services";
 
 	useMotionValueEvent(scrollY, "change", (latest) => {
-		const previous = scrollY.getPrevious();
-		if (previous && latest > previous) {
-			setHidden(true);
-		} else {
-			setHidden(false);
-		}
-	});
+  const previous = scrollY.getPrevious();
+  if (previous && latest > previous) {
+    setHidden(true);  // Hide navbar on scroll down
+  } else {
+    setHidden(false); // Show navbar on scroll up or no movement
+  }
+});
 
 	return (
 		<>
 			<motion.nav
 				variants={navVariants}
-				className="w-full h-[8vh] padding-x fixed top-0 left-0 z-50 backdrop-blur-[7px] flex items-center justify-between sm:hidden xm:hidden md:hidden"
+				className="w-full h-[8vh] padding-x fixed top-0 left-0 z-50 flex items-center justify-between sm:hidden xm:hidden md:hidden"
 				animate={hidden ? "hidden" : "vissible"}
+				style={{
+					backgroundColor: "#6495ED",
+					borderRadius: "0px 0px 25px 25px",
+					boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+				}}
 			>
 				{/* ✅ Logo changes color dynamically */}
 				<div className="w-[50%]">
