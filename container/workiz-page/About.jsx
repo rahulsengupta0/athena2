@@ -20,7 +20,7 @@ export default function About() {
 								<p className="paragraph font-NeueMontreal text-secondry">
 									Built by home service professionals on a
 									<br className="sm:hidden xm:hidden" /> mission to make your
-									“work easy,” <br className="sm:hidden xm:hidden" />
+									"work easy," <br className="sm:hidden xm:hidden" />
 									Workiz empowers service businesses to get more
 									<br className="sm:hidden xm:hidden" /> jobs done, work easier,
 									and grow smarter.

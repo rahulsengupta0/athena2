@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {project3} from "@/public";
+import { project3 } from "@/public";
+
 const lmsFeatures = [
   {
     id: 1,
@@ -59,9 +60,9 @@ const lmsFeatures = [
 ];
 
 export default function LMSFeatures() {
-  const [activeFeature, setActiveFeature] = useState<number | null>(null);
+  const [activeFeature, setActiveFeature] = useState(null);
 
-  const handleMouseEnter = (featureId: number) => {
+  const handleMouseEnter = (featureId) => {
     setActiveFeature(featureId);
   };
 
@@ -177,7 +178,7 @@ export default function LMSFeatures() {
           animate="visible"
         >
           {lmsFeatures.map((feature) => {
-            const colors = colorMap[feature.color as keyof typeof colorMap];
+            const colors = colorMap[feature.color];
             
             return (
               <motion.div

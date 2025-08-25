@@ -7,12 +7,12 @@ import { serviceClientsItem } from "@/constants";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Clients() {
-	const [activeAccordion, setActiveAccordion] = useState(
-		serviceClientsItem[0].id,
-	);
-	const toggleAccordion = (itemId: any) => {
+	const [activeAccordion, setActiveAccordion] = useState(serviceClientsItem[0].id);
+
+	const toggleAccordion = (itemId) => {
 		setActiveAccordion((prev) => (prev === itemId ? null : itemId));
 	};
+
 	return (
 		<section className="w-full padding-y">
 			<h1 className="sub-heading padding-x font-medium font-NeueMontreal text-secondry pb-[50px]">
@@ -64,8 +64,7 @@ export default function Clients() {
 						</div>
 					</div>
 
-					<div
-						className={`w-full flex justify-between padding-x  sm:flex-col xm:flex-col`}>
+					<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col">
 						<div className="w-[20%] sm:w-auto xm:w-auto" />
 						<div className="w-[30%] sm:w-auto xm:w-auto sm:flex xm:flex flex-wrap gap-x-[5px] sm:pt-[10px] xm:pt-[10px]">
 							{item.links.map((link) => (
@@ -79,11 +78,7 @@ export default function Clients() {
 												ease: [0.4, 0, 0.2, 1],
 												duration: 1,
 											}}>
-											<Button
-												href={link.href}
-												title={link.title}
-												key={link.id}
-											/>
+											<Button href={link.href} title={link.title} key={link.id} />
 										</motion.div>
 									)}
 								</AnimatePresence>
@@ -108,7 +103,7 @@ export default function Clients() {
 													className="w-full h-full object-cover rounded-[10px]"
 												/>
 											</div>
-											<div className="">
+											<div>
 												<p className="small-text tracking-wider font-normal font-NeueMontreal text-secondry">
 													{item.review}
 												</p>

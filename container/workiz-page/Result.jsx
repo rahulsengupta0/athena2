@@ -18,7 +18,7 @@ export default function Result() {
 									Feedback
 								</p>
 								<p className="paragraph font-NeueMontreal text-secondry">
-									“OCHI brought certain level of
+									"OCHI brought certain level of
 									<br className="sm:hidden xm:hidden" /> professionalism into
 									our presentations that
 									<br className="sm:hidden xm:hidden" /> we were lacking before.
@@ -35,7 +35,7 @@ export default function Result() {
 									what we needed to create a better
 									<br className="sm:hidden xm:hidden" /> experience for new
 									employees and our <br className="sm:hidden xm:hidden" />
-									clients.”
+									clients."
 								</p>
 							</div>
 							<div className="flex flex-col gap-y-[10px] sm:w-full xm:w-full">
@@ -43,7 +43,7 @@ export default function Result() {
 									The Result
 								</p>
 								<p className="paragraph font-NeueMontreal text-secondry">
-									We’ve created 10 presentations for Workiz
+									We've created 10 presentations for Workiz
 									<br className="sm:hidden xm:hidden" /> company which improved
 									the on-boarding <br className="sm:hidden xm:hidden" />
 									process, empowered sales team, and just made

@@ -22,57 +22,63 @@ const expectationsItems = [
     title1: "01",
     subTitle1: "Interactive Learning",
     btn: "Explore",
-    para1: "Experience engaging multimedia content, interactive quizzes, and real-time collaboration tools that make learning immersive and effective.",
-    icon: "📚"
+    para1:
+      "Experience engaging multimedia content, interactive quizzes, and real-time collaboration tools that make learning immersive and effective.",
+    icon: "📚",
   },
   {
     id: 2,
     title1: "02",
     subTitle1: "AI-Powered Analytics",
     btn: "Discover",
-    para1: "Our advanced analytics track your progress, identify knowledge gaps, and recommend personalized learning paths to maximize your potential.",
-    icon: "📊"
+    para1:
+      "Our advanced analytics track your progress, identify knowledge gaps, and recommend personalized learning paths to maximize your potential.",
+    icon: "📊",
   },
   {
     id: 3,
     title1: "03",
     subTitle1: "Mobile Accessibility",
     btn: "Learn",
-    para1: "Access your courses anytime, anywhere with our fully responsive platform that works seamlessly across all your devices.",
-    icon: "📱"
+    para1:
+      "Access your courses anytime, anywhere with our fully responsive platform that works seamlessly across all your devices.",
+    icon: "📱",
   },
   {
     id: 4,
     title1: "04",
     subTitle1: "Expert Instructors",
     btn: "Meet",
-    para1: "Learn from industry professionals and academic experts who bring real-world experience and cutting-edge knowledge to every lesson.",
-    icon: "👨‍🏫"
+    para1:
+      "Learn from industry professionals and academic experts who bring real-world experience and cutting-edge knowledge to every lesson.",
+    icon: "👨‍🏫",
   },
   {
     id: 5,
     title1: "05",
     subTitle1: "Career Advancement",
     btn: "Grow",
-    para1: "Gain recognized certifications and build portfolio projects that demonstrate your skills to potential employers and advance your career.",
-    icon: "🚀"
+    para1:
+      "Gain recognized certifications and build portfolio projects that demonstrate your skills to potential employers and advance your career.",
+    icon: "🚀",
   },
   {
     id: 6,
     title1: "06",
     subTitle1: "Community Support",
     btn: "Connect",
-    para1: "Join a vibrant community of learners, participate in discussion forums, and get support from peers and mentors throughout your journey.",
-    icon: "🤝"
-  }
+    para1:
+      "Join a vibrant community of learners, participate in discussion forums, and get support from peers and mentors throughout your journey.",
+    icon: "🤝",
+  },
 ].map((item, i) => ({
   ...item,
   img: athenaLmsImgs[i % athenaLmsImgs.length],
 }));
 
 export default function Expectations() {
-  const [openItemId, setOpenItemId] = useState<number | null>(null);
-  const [hoveredItemId, setHoveredItemId] = useState<number | null>(null);
+  const [openItemId, setOpenItemId] = useState(null);
+  const [hoveredItemId, setHoveredItemId] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Auto-rotate featured items
@@ -83,11 +89,13 @@ export default function Expectations() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleButtonClick = (id: number) => {
+  const handleButtonClick = (id) => {
     setOpenItemId(openItemId === id ? null : id);
   };
 
-  const hoveredItem = expectationsItems.find((item) => item.id === hoveredItemId);
+  const hoveredItem = expectationsItems.find(
+    (item) => item.id === hoveredItemId
+  );
   const activeItem = expectationsItems[activeIndex];
 
   return (
@@ -130,11 +138,11 @@ export default function Expectations() {
           className="pb-[50px] lg:pb-[40px] md:pb-[30px] sm:pb-[30px] xm:pb-[15px] text-[540px] leading-[330px] lg:text-[380px] lg:leading-[240px] md:text-[300px] md:leading-[160px] sm:text-[230px] sm:leading-[140px] xm:text-[130px] xm:leading-[80px]"
         />
       </div>
-      
+
       <div className="w-full padding-x py-[20px] flex flex-row sm:flex-col xm:flex-col gap-[20px] relative z-20">
         {/* Left column: heading + preview */}
         <div className="w-1/2 sm:w-full xm:w-full flex flex-col items-center justify-start pt-[32px] relative">
-          <motion.h3 
+          <motion.h3
             className="paragraph font-medium text-white font-NeueMontreal mb-6 text-center sm:text-left xm:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -142,7 +150,7 @@ export default function Expectations() {
           >
             What can you expect with Athena LMS?
           </motion.h3>
-          
+
           <div className="relative w-96 h-72">
             <AnimatePresence mode="wait">
               {(hoveredItem || activeItem) && (
@@ -157,13 +165,19 @@ export default function Expectations() {
                   <div className="h-3/4 overflow-hidden">
                     <img
                       src={hoveredItem ? hoveredItem.img : activeItem.img}
-                      alt={hoveredItem ? hoveredItem.subTitle1 : activeItem.subTitle1}
+                      alt={
+                        hoveredItem
+                          ? hoveredItem.subTitle1
+                          : activeItem.subTitle1
+                      }
                       className="object-cover w-full h-full transition-transform duration-700 ease-out hover:scale-110"
                       style={{ pointerEvents: "none" }}
                     />
                   </div>
                   <div className="h-1/4 bg-gradient-to-b from-blue-800 to-blue-900 p-3 flex items-center">
-                    <span className="text-2xl mr-3">{hoveredItem ? hoveredItem.icon : activeItem.icon}</span>
+                    <span className="text-2xl mr-3">
+                      {hoveredItem ? hoveredItem.icon : activeItem.icon}
+                    </span>
                     <h4 className="text-white font-medium">
                       {hoveredItem ? hoveredItem.subTitle1 : activeItem.subTitle1}
                     </h4>
@@ -171,27 +185,28 @@ export default function Expectations() {
                 </motion.div>
               )}
             </AnimatePresence>
-            
+
             {/* Floating elements */}
-            <motion.div 
+            <motion.div
               className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-yellow-400"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <motion.div 
+            <motion.div
               className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-green-400"
               animate={{ scale: [1, 1.3, 1] }}
               transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
             />
           </div>
-          
-          <motion.p 
+
+          <motion.p
             className="text-white/80 text-center mt-6 max-w-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            Athena LMS transforms learning through cutting-edge technology and pedagogical innovation.
+            Athena LMS transforms learning through cutting-edge technology and
+            pedagogical innovation.
           </motion.p>
         </div>
 
@@ -206,9 +221,13 @@ export default function Expectations() {
               whileHover={{ y: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div 
+              <div
                 className={`w-full rounded-[20px] px-[30px] py-[20px] cursor-pointer transition-all duration-300 min-h-[220px] flex flex-col 
-                  ${openItemId === item.id ? 'bg-[#0066CC] shadow-lg' : 'bg-[#1E90FF]'} 
+                  ${
+                    openItemId === item.id
+                      ? "bg-[#0066CC] shadow-lg"
+                      : "bg-[#1E90FF]"
+                  } 
                   hover:shadow-xl`}
               >
                 <div className="flex gap-x-[10px] items-center pb-[10px]">
@@ -217,16 +236,18 @@ export default function Expectations() {
                     {item.title1}
                   </h1>
                 </div>
-                
-                <motion.div 
+
+                <motion.div
                   className="mb-4 mt-2 h-12"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <h3 className="text-white font-medium text-lg">{item.subTitle1}</h3>
+                  <h3 className="text-white font-medium text-lg">
+                    {item.subTitle1}
+                  </h3>
                 </motion.div>
-                
+
                 <div className="w-full flex justify-between items-center mt-auto">
                   <button className="small-text font-normal font-NeueMontreal text-white">
                     <TextHover titile1="Learn more" titile2="Learn more" />
@@ -238,7 +259,7 @@ export default function Expectations() {
                     {openItemId === item.id ? "Hide" : item.btn}
                   </button>
                 </div>
-                
+
                 <AnimatePresence>
                   {openItemId === item.id && (
                     <motion.div
@@ -261,9 +282,9 @@ export default function Expectations() {
           ))}
         </div>
       </div>
-      
+
       {/* Floating CTA at bottom */}
-      <motion.div 
+      <motion.div
         className="flex justify-center mt-10 pb-5"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

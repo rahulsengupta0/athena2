@@ -1,5 +1,4 @@
 "use client";
-import { TlogoMarqueeProps } from "@/types";
 import {
 	motion,
 	useScroll,
@@ -12,10 +11,7 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 
-export default function LogoMarquee({
-	children,
-	baseVelocity = 100,
-}: TlogoMarqueeProps) {
+export default function LogoMarquee({ children, baseVelocity = 100 }) {
 	const baseX = useMotionValue(0);
 	const { scrollY } = useScroll();
 	const scrollVelocity = useVelocity(scrollY);
@@ -28,7 +24,7 @@ export default function LogoMarquee({
 	});
 	const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
 
-	const directionFactor = useRef<number>(1);
+	const directionFactor = useRef(1);
 	useAnimationFrame((t, delta) => {
 		let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
