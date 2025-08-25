@@ -813,7 +813,7 @@ export const presentationProjectItem = [
       {
         id: 2,
         title: "big news deck",
-        href: "/services",
+        href: "services",
       },
       {
         id: 3,
@@ -874,7 +874,7 @@ export const presentationProjectItem = [
       {
         id: 2,
         title: "company presentation",
-        href: "/services",
+        href: "services",
       },
     ]
   },
@@ -936,22 +936,23 @@ export const presentationProjectItem = [
 
 
 export const publicationItems = [
-   {
-      id: 1,
-      title: "Employee Engagement Template",
-      src: publication1
-   },
-   {
-      id: 2,
-      title: "Energy Sector Training Pitch Deck",
-      src: publication2
-   },
-   {
-      id: 3,
-      title: "Tech Initiatives for Education",
-      src: publication3
-   },
+   {
+      id: 1,
+      title: "Employee Engagement Template",
+      src: publication1
+   },
+   {
+      id: 2,
+      title: "Energy Sector Training Pitch Deck",
+      src: publication2
+   },
+   {
+      id: 3,
+      title: "Tech Initiatives for Education",
+      src: publication3
+   },
 ];
+
 
 // insights page constants
 
@@ -1008,7 +1009,7 @@ export const latestItemss = [
    },
 ];
 
-// workiz page constants
+ // workiz page constants
 export const workizItem = [
    {
       id: 1,
@@ -1064,7 +1065,7 @@ export const workizItem = [
 ];
 
 
-// about page constants
+ // about page constants
 
 export const aboutPartberItems = [
    {
@@ -1117,7 +1118,7 @@ export const aboutPartberItems = [
    // },
 ];
 
-// contact page constants
+ // contact page constants
 
 export const FaqItems = [
    {
