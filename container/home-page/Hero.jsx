@@ -1,144 +1,111 @@
-"use client";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
-import { useState } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { clientsItem } from "@/constants";
-import { Button, Ratings } from "@/components";
+export default function Hero() {
+	return (
+		<section
+			className="relative w-full h-screen sm:mb-[-10px] xm:mb-[-10px] overflow-hidden"
+			data-scroll
+			data-scroll-speed="-.3"
+		>
+			{/* Background Video */}
+			<video
+				autoPlay
+				loop
+				muted
+				playsInline
+				className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+			>
+				<source src="/interactive.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
 
-export default function Clients() {
-  const [activeIndex, setActiveIndex] = useState(0);
+			{/* Blue overlay with gradient */}
+			<div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-800/30 to-blue-900/40 z-0" />
 
-  const nextReview = () => {
-    setActiveIndex((prev) => (prev + 1) % clientsItem.length);
-  };
+			{/* Hero Content */}
+			<div className="relative z-10 w-full h-full flex flex-col justify-between">
+				<div />
+				<div className="w-full flex flex-col justify-between h-[75vh] sm:h-[85vh] xm:h-[85vh]">
+					<div className="w-full flex justify-between gap-[20px] pl-[50px] md:pl-[30px] sm:pl-[20px] xm:pl-[20px]">
+						<div>
+							<h1 className="heading tracking-[-1.3px] text-white font-semibold font-FoundersGrotesk uppercase">
+								Transform Your Learning <br />
+								<div className="flex items-center gap-[5px]">
+									<motion.span
+										initial={{ width: 0 }}
+										animate={{ width: "auto" }}
+										transition={{
+											ease: [0.86, 0, 0.07, 0.995],
+											duration: 1,
+											delay: 1.5,
+										}}
+										className="leading-[130px]"
+									>
+										<img
+											src="/AthenaDash.png"
+											alt="Athena Logo"
+											className="w-auto h-[95px] lg:w-auto lg:h-auto md:w-[100px] md:h-[63px] sm:w-[74px] sm:h-[45px] xm:w-[64px] xm:h-[40px] object-cover xl:mt-[15px] mt-[10px] rounded-[5px]"
+										/>
+									</motion.span>
+									<h1 className="heading tracking-[-1.3px] text-white font-semibold font-FoundersGrotesk uppercase">
+										Skill Enhancing
+									</h1>
+								</div>
+								Experience
+							</h1>
+						</div>
+					</div>
 
-  const prevReview = () => {
-    setActiveIndex((prev) =>
-      prev === 0 ? clientsItem.length - 1 : prev - 1
-    );
-  };
-
-  return (
-    <section className="relative w-full py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold font-NeueMontreal text-gray-900 mb-12"
-        >
-          What our clients say
-        </motion.h1>
-
-        {/* Review Carousel */}
-        <div className="relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={clientsItem[activeIndex].id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="flex flex-col items-center gap-8"
-            >
-              {/* Client Image */}
-              <div className="w-[120px] h-[120px] relative">
-                <Image
-                  src={clientsItem[activeIndex].src}
-                  alt={clientsItem[activeIndex].name}
-                  className="rounded-full object-cover shadow-lg"
-                  fill
-                />
-              </div>
-
-              {/* Review Text */}
-              <p className="max-w-3xl text-lg md:text-xl text-gray-700 leading-relaxed italic">
-                “{clientsItem[activeIndex].review}”
-              </p>
-
-              {/* Client Info */}
-              <div className="flex flex-col items-center">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {clientsItem[activeIndex].name}
-                </h3>
-                <span className="text-sm text-gray-500">
-                  {clientsItem[activeIndex].title}
-                </span>
-                <a
-                  href={clientsItem[activeIndex].href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline text-sm mt-1"
-                >
-                  {clientsItem[activeIndex].website}
-                </a>
-              </div>
-
-              {/* Action Buttons */}
-              {clientsItem[activeIndex].links?.length > 0 && (
-                <div className="flex gap-6 mt-6">
-                  {clientsItem[activeIndex].links.map((link) => (
-                    <Button key={link.id} href={link.href} title={link.title} />
-                  ))}
-                </div>
-              )}
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation Arrows */}
-          <div className="absolute top-1/2 left-0 -translate-y-1/2">
-            <button
-              onClick={prevReview}
-              aria-label="Previous Review"
-              className="p-3 bg-white shadow-md rounded-full hover:bg-gray-100"
-            >
-              ◀
-            </button>
-          </div>
-          <div className="absolute top-1/2 right-0 -translate-y-1/2">
-            <button
-              onClick={nextReview}
-              aria-label="Next Review"
-              className="p-3 bg-white shadow-md rounded-full hover:bg-gray-100"
-            >
-              ▶
-            </button>
-          </div>
-        </div>
-
-        {/* Thumbnails */}
-        <div className="flex justify-center gap-4 mt-10">
-          {clientsItem.map((item, index) => (
-            <motion.button
-              key={item.id}
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Select testimonial from ${item.name}`}
-              className={`w-14 h-14 rounded-full overflow-hidden border-2 transition-all ${
-                activeIndex === index
-                  ? "border-blue-500 scale-110"
-                  : "border-gray-200 opacity-70"
-              }`}
-              whileHover={{ scale: 1.1 }}
-            >
-              <Image
-                src={item.src}
-                alt={item.name}
-                width={56}
-                height={56}
-                className="object-cover"
-              />
-            </motion.button>
-          ))}
-        </div>
-
-        {/* Ratings */}
-        <div className="mt-16">
-          <Ratings />
-        </div>
-      </div>
-    </section>
-  );
+					<div className="w-full flex flex-col h-[22vh] border-t border-white/40 py-[20px] sm:mb-[80px] xm:mb-[80px] gap-[30px]">
+						<div className="flex justify-between items-center padding-x gap-[20px] sm:flex-col sm:items-start xm:flex-col xm:items-start">
+							<div className="w-[50%] xm:w-full sm:w-full">
+								<p className="paragraph font-NeueMontreal text-white/90">
+									For students, educators, and lifelong learners
+								</p>
+							</div>
+							<div className="w-[50%] xm:w-full sm:w-full flex justify-between xm:flex-col xm:items-start sm:flex-col sm:items-start gap-[20px]">
+								<div>
+									<p className="paragraph font-NeueMontreal text-white/90">
+										From first lesson to mastery
+									</p>
+								</div>
+								<div className="flex items-center gap-[5px] group">
+									<div className="rounded-[50px] border border-white/60 group-hover:bg-white py-[3px] px-[12px] cursor-pointer transition-all duration-300">
+										<a
+											href="/contact"
+											className="paragraph font-NeueMontreal text-white uppercase group-hover:text-blue-900 transition-all duration-300"
+										>
+											Start Learning
+										</a>
+									</div>
+									<div className="w-[33px] flex items-center justify-center h-[33px] border border-white/60 rounded-full p-[1px] group-hover:bg-white transition-all duration-300 cursor-pointer xm:hidden sm:hidden">
+										<ArrowUpRight 
+											size={24} 
+											strokeWidth={1.25} 
+											className="text-white group-hover:text-blue-900" 
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className="w-full flex items-center overflow-hidden justify-center xm:hidden sm:hidden">
+							<motion.p
+								initial={{ y: "-100%", opacity: 0 }}
+								animate={{ y: "100%", opacity: 0.7 }}
+								transition={{
+									duration: 1.8,
+									repeat: Infinity,
+									ease: [0.3, 0.86, 0.36, 0.95],
+								}}
+								className="paragraph font-NeueMontreal text-white/80"
+							>
+								scroll down
+							</motion.p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 }

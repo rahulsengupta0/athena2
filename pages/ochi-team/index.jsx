@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 
 // Replace alias imports with actual relative paths as needed
-import Curve from "./components/Curve";
-import Ready from "./components/Ready";
-import Heroabout from "./components/Heroabout";
-import Aboutabout from "./components/Aboutabout";
-import Team from "./components/Team";
-import Principles from "./components/Principles";
-import Insights from "./components/Insights";
+import Curve from "@/components/Curve/Curve.jsx"; 
+import Ready from "@/components/Ready";
+import Heroabout from "@/container";
+import Aboutabout from "@/container";
+import Team from "@/container";
+import Principles from "@/container";
+import Insights from "@/container";
 // import Partners from "./components/Partners"; // Uncomment if needed
 
 const About = () => {
