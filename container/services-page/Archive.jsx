@@ -20,7 +20,8 @@ export default function Archive() {
 						{achiveItems.map((item) => (
 							<div
 								className="w-full flex justify-between gap-[20px] sm:flex-col xm:flex-col"
-								key={item.id}>
+								key={item.id}
+							>
 								<div className="bg-[#E1E1E1] w-full flex flex-col gap-y-[150px] rounded-[20px] px-[30px] py-[20px]">
 									<div className="flex gap-x-[10px] items-center pb-[10px]">
 										<h1 className="sub-heading font-normal font-NeueMontreal">
