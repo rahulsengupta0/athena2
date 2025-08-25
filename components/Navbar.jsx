@@ -12,17 +12,17 @@ export default function Navbar() {
 	const { scrollY } = useScroll();
 	const pathname = usePathname();
 
-	// ✅ White theme only for Home and Features page
+	// ✅ White theme only for Home and Services page
 	const isWhiteTheme = pathname === "/" || pathname === "/services";
 
 	useMotionValueEvent(scrollY, "change", (latest) => {
-  const previous = scrollY.getPrevious();
-  if (previous && latest > previous) {
-    setHidden(true);  // Hide navbar on scroll down
-  } else {
-    setHidden(false); // Show navbar on scroll up or no movement
-  }
-});
+		const previous = scrollY.getPrevious();
+		if (previous && latest > previous) {
+			setHidden(true); // Hide navbar on scroll down
+		} else {
+			setHidden(false); // Show navbar on scroll up
+		}
+	});
 
 	return (
 		<>

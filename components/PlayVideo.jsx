@@ -4,10 +4,10 @@ import { eyes } from "@/public";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
-export default function PlayVideo({ videosrc }: { videosrc: string }) {
+export default function PlayVideo({ videosrc }) {
 	const [rotate, setRotate] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
-	const videoRef = useRef<HTMLVideoElement>(null);
+	const videoRef = useRef(null);
 
 	const togglePlay = () => {
 		if (videoRef.current) {
@@ -21,17 +21,21 @@ export default function PlayVideo({ videosrc }: { videosrc: string }) {
 	};
 
 	useEffect(() => {
-		window.addEventListener("mousemove", (e) => {
+		const handleMouseMove = (e) => {
 			let mouseX = e.clientX;
 			let mouseY = e.clientY;
 
 			let deltaX = mouseX - window.innerWidth / 2;
 			let deltaY = mouseY - window.innerHeight / 2;
 
-			var angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+			let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
 			setRotate(angle - 180);
-		});
+		};
+
+		window.addEventListener("mousemove", handleMouseMove);
+		return () => window.removeEventListener("mousemove", handleMouseMove);
 	}, []);
+
 	const container = useRef(null);
 
 	const { scrollYProgress } = useScroll({
@@ -40,16 +44,19 @@ export default function PlayVideo({ videosrc }: { videosrc: string }) {
 	});
 
 	const mq = useTransform(scrollYProgress, [0, 1], [0, -400]);
+
 	return (
 		<div
 			className="w-full relative overflow-hidden cursor-pointer"
 			ref={container}
-			onClick={togglePlay}>
+			onClick={togglePlay}
+		>
 			<div
 				className="w-full h-full"
 				data-scroll
 				data-scroll-speed="-.8"
-				data-scroll-section>
+				data-scroll-section
+			>
 				<video
 					className="w-full h-full"
 					loop
@@ -60,10 +67,12 @@ export default function PlayVideo({ videosrc }: { videosrc: string }) {
 					className={`w-full absolute top-[50%] transform translate-y-[-50%] gap-[30px] flex items-center justify-center ${
 						isPlaying && "hidden"
 					}`}
-					style={{ y: mq }}>
+					style={{ y: mq }}
+				>
 					<div
 						className="w-[200px] h-[200px] sm:w-[150px] sm:h-[150px] xm:w-[100px] xm:h-[100px] bg-white rounded-full flex items-center justify-center cursor-pointer"
-						onClick={togglePlay}>
+						onClick={togglePlay}
+					>
 						<div className="relative w-full h-full">
 							<Image
 								style={{
@@ -80,7 +89,8 @@ export default function PlayVideo({ videosrc }: { videosrc: string }) {
 					</div>
 					<div
 						className="w-[200px] sm:w-[150px] sm:h-[150px] xm:w-[100px] xm:h-[100px] bg-white rounded-full flex items-center justify-center cursor-pointer"
-						onClick={togglePlay}>
+						onClick={togglePlay}
+					>
 						<div className="relative w-full h-full">
 							<Image
 								style={{
@@ -100,8 +110,9 @@ export default function PlayVideo({ videosrc }: { videosrc: string }) {
 					onClick={togglePlay}
 					className={`w-full absolute top-[50%] transform translate-y-[-50%] gap-[30px] flex items-center justify-center ${
 						!isPlaying && "hidden"
-					}`}>
-					<button className="text-white text-[18px] bg-black px-[10px]  leading-none font-normal py-[5px] font-NeueMontreal rounded-[20px]">
+					}`}
+				>
+					<button className="text-white text-[18px] bg-black px-[10px] leading-none font-normal py-[5px] font-NeueMontreal rounded-[20px]">
 						pause
 					</button>
 				</div>
