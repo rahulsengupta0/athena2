@@ -6,29 +6,34 @@ export const navbarItems = [
       id: 1,
       title: "About us",
       href: "/ochi-team",
+      color: "black",  // default
    },
    {
       id: 2,
       title: "Features",
       href: "/services",
+      color: "white",  // white for Services page
    },
    {
       id: 3,
       title: "Why Us",
       href: "/presentation",
+      color: "black",
    },
-   
    {
       id: 4,
       title: "FAQ",
       href: "/insights",
+      color: "black",
    },
    {
       id: 5,
       title: "Contact us",
       href: "/contact",
+      color: "black",
    },
 ];
+
 
 // Footer
 
