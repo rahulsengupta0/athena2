@@ -27,6 +27,6 @@
 		"**/*.tsx",
 		".next/types/**/*.ts",
 		"components/Curve/Curve.jsx"
-	],
+, "container/presentation-page/Hero.jsx", "container/services-page/Archive.jsx", "container/services-page/Capibilyties.jsx", "container/services-page/Clients.jsx", "container/services-page/Expectations.jsx", "container/services-page/Hero.jsx", "container/services-page/Process.jsx", "container/presentation-page/Publication.jsx", "container/presentation-page/Projects.jsx"	],
 	"exclude": ["node_modules"]
 }

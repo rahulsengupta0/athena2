@@ -40,9 +40,9 @@ export default function Hero() {
         <source src="/features.mp4" type="video/mp4" />
       </video>
 
-      
-			{/* Blue overlay with gradient for better readability */}
-			<div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-800/30 to-blue-900/40 z-0" />
+      {/* Blue overlay with gradient for better readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-800/30 to-blue-900/40 z-0" />
+
       {/* Content */}
       <motion.div
         className="relative z-10 w-full h-full flex flex-col items-start justify-center px-8 sm:px-16 lg:px-24"
