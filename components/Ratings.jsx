@@ -133,8 +133,8 @@ export default function Ratings() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <p className="text-lg font-medium mb-4">
-  {"Athena transformed how our students engage with complex topics. The adaptive learning paths helped us improve completion rates by 40%."}
-</p>
+                {"Athena transformed how our students engage with complex topics. The adaptive learning paths helped us improve completion rates by 40%."}
+              </p>
 
               <p className="text-sm font-light text-purple-200">
                 — Sarah Johnson, Dean of Digital Learning
@@ -221,8 +221,8 @@ export default function Ratings() {
                 <path d="M12 14l-9-5 9-5 9 5-9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
               </svg>
               <p className="text-lg font-medium mb-4">
-  {"The analytics dashboard gives me real-time insights to personalize instruction like never before."}
-</p>
+                {"The analytics dashboard gives me real-time insights to personalize instruction like never before."}
+              </p>
 
               <p className="text-sm font-light text-sky-200">
                 — Prof. Michael Chen, Computer Science Department
