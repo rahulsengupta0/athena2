@@ -12,7 +12,7 @@ export default function Navbar() {
 	const { scrollY } = useScroll();
 	const pathname = usePathname();
 
-	// ✅ White theme only for Home ("/") and Features ("/services") page
+	// ✅ White theme only for Home and Features page
 	const isWhiteTheme = pathname === "/" || pathname === "/services";
 
 	useMotionValueEvent(scrollY, "change", (latest) => {
@@ -52,17 +52,12 @@ export default function Navbar() {
 					{navbarItems.map((item) => (
 						<Link
 							key={item.id}
-							href={item.href}
 							className={`w-fit paragraph font-bold font-NeueMontreal capitalize flex flex-col hover ${
 								item.id === 5 && "ml-auto"
-							}`}
+							} ${isWhiteTheme ? "text-white" : "text-black"}`}
+							href={item.href}
 						>
-							<TextHover
-								titile1={item.title}
-								titile2={item.title}
-								// ✅ Pass color condition to TextHover
-								className={isWhiteTheme ? "text-white" : "text-black"}
-							/>
+							<TextHover titile1={item.title} titile2={item.title} />
 						</Link>
 					))}
 				</div>
