@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaRobot } from "react-icons/fa";
 import Chatbot from "./Chatbot";
 
-const FloatingChatbot: React.FC = () => {
+const FloatingChatbot = () => {
   const [open, setOpen] = useState(false);
 
   return (

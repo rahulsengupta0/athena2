@@ -3,8 +3,9 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-      <title>ATHENA- Your Learning Management System</title>
-      <Head />
+      <Head>
+        <title>ATHENA - Your Learning Management System</title>
+      </Head>
       <body>
         <Main />
         <NextScript />
