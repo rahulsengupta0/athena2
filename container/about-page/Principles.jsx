@@ -23,7 +23,7 @@ export default function Principles() {
         {/* Principles Grid with Interactive Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 border-t border-gray-300 pt-16">
           {/* Principle 1 */}
-          <div className="group relative overflow-hidden rounded-[25px] bg-white shadow-md transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-cardIn delay-200">
+          <div className="group relative overflow-hidden rounded-[25px] bg-white shadow-md transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
             {/* Image with Parallax Effect */}
             <div className="overflow-hidden">
               <Image
@@ -51,7 +51,7 @@ export default function Principles() {
           </div>
 
           {/* Principle 2 */}
-          <div className="group relative overflow-hidden rounded-[25px] bg-white shadow-md transition-transform duration-500 hover:scale-105 hover:shadow-2xl animate-cardIn delay-400">
+          <div className="group relative overflow-hidden rounded-[25px] bg-white shadow-md transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
             {/* Image with Parallax Effect */}
             <div className="overflow-hidden">
               <Image
@@ -66,7 +66,7 @@ export default function Principles() {
                 Revealing the unseen
               </h2>
               <p className="text-lg mb-4">
-                Great learning uncovers what’s hidden — guiding focus,
+                Great learning uncovers what's hidden — guiding focus,
                 sparking curiosity, and delivering lasting understanding.
               </p>
               <a
@@ -82,34 +82,3 @@ export default function Principles() {
     </section>
   );
 }
-
-// 🔑 Add this CSS (globals.css or tailwind.config.css)
-// @keyframes fadeInUp {
-//   from {
-//     transform: translateY(20px);
-//     opacity: 0;
-//   }
-//   to {
-//     transform: translateY(0);
-//     opacity: 1;
-//   }
-// }
-//
-// @keyframes cardIn {
-//   from {
-//     transform: translateY(50px) scale(0.95);
-//     opacity: 0;
-//   }
-//   to {
-//     transform: translateY(0) scale(1);
-//     opacity: 1;
-//   }
-// }
-//
-// .animate-fadeInUp {
-//   animation: fadeInUp 1s ease-out forwards;
-// }
-//
-// .animate-cardIn {
-//   animation: cardIn 0.8s ease-out forwards;
-// }

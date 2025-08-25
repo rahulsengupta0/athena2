@@ -22,6 +22,7 @@ export default function Clients() {
   return (
     <section className="relative w-full py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
+
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -69,6 +70,7 @@ export default function Clients() {
                 <a
                   href={clientsItem[activeIndex].href}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-600 hover:underline text-sm mt-1"
                 >
                   {clientsItem[activeIndex].website}
@@ -76,11 +78,13 @@ export default function Clients() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-6 mt-6">
-                {clientsItem[activeIndex].links.map((link) => (
-                  <Button key={link.id} href={link.href} title={link.title} />
-                ))}
-              </div>
+              {clientsItem[activeIndex].links?.length > 0 && (
+                <div className="flex gap-6 mt-6">
+                  {clientsItem[activeIndex].links.map((link) => (
+                    <Button key={link.id} href={link.href} title={link.title} />
+                  ))}
+                </div>
+              )}
             </motion.div>
           </AnimatePresence>
 
@@ -88,6 +92,7 @@ export default function Clients() {
           <div className="absolute top-1/2 left-0 -translate-y-1/2">
             <button
               onClick={prevReview}
+              aria-label="Previous Review"
               className="p-3 bg-white shadow-md rounded-full hover:bg-gray-100"
             >
               ◀
@@ -96,6 +101,7 @@ export default function Clients() {
           <div className="absolute top-1/2 right-0 -translate-y-1/2">
             <button
               onClick={nextReview}
+              aria-label="Next Review"
               className="p-3 bg-white shadow-md rounded-full hover:bg-gray-100"
             >
               ▶
@@ -109,6 +115,7 @@ export default function Clients() {
             <motion.button
               key={item.id}
               onClick={() => setActiveIndex(index)}
+              aria-label={`Select testimonial from ${item.name}`}
               className={`w-14 h-14 rounded-full overflow-hidden border-2 transition-all ${
                 activeIndex === index
                   ? "border-blue-500 scale-110"

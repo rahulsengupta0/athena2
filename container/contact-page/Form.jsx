@@ -17,9 +17,9 @@ export default function Form() {
       </video>
 
       {/* Light blue overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-blue-300 opacity-30 z-5 pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-blue-300 opacity-30 z-[5] pointer-events-none" />
 
-      {/* Form content above overlay and video */}
+      {/* Form content */}
       <div className="w-full flex flex-col gap-[15px] relative z-10">
         <iframe
           src="https://api.wonderengine.ai/widget/form/dCgUnKpQ6hAXUgj5doxe"
@@ -32,7 +32,7 @@ export default function Form() {
           }}
           id="inline-dCgUnKpQ6hAXUgj5doxe"
           title="Athena Contact"
-        ></iframe>
+        />
       </div>
     </section>
   );

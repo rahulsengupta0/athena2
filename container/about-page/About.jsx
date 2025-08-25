@@ -32,7 +32,7 @@ export default function About() {
             </p>
             <p className="paragraph font-NeueMontreal text-secondry leading-relaxed">
               Our philosophy is simple: knowledge should be immersive, intuitive, 
-              and inspiring. That’s why we built Athena — to help businesses 
+              and inspiring. That's why we built Athena — to help businesses 
               educate with elegance and scale with confidence.
             </p>
           </div>

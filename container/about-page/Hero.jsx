@@ -132,7 +132,7 @@ export default function Hero() {
         className="padding-x pb-16 relative z-10"
       >
         <h2 className="sub-heading font-medium font-NeueMontreal text-[#0f172a]">
-          We transform complex ideas into{" "} engaging learning experiences.
+          We transform complex ideas into engaging learning experiences.
         </h2>
       </motion.div>
 

@@ -33,8 +33,8 @@ const values = [
   },
 ];
 
-const ValuesSection: React.FC = () => {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+const ValuesSection = () => {
+  const [activeCard, setActiveCard] = useState(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const controls = useAnimation();
