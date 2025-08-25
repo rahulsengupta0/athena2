@@ -1,6 +1,4 @@
-import { TtextHoverProps } from "@/types";
-
-export default function TextHover({ titile1, titile2 }: TtextHoverProps) {
+export default function TextHover({ titile1, titile2 }) {
   return (
     <div className="group overflow-hidden cursor-pointer transition-all ease-in-out duration-200">
       <div className="relative transition-all ease-in-out duration-500">
@@ -20,4 +18,3 @@ export default function TextHover({ titile1, titile2 }: TtextHoverProps) {
     </div>
   );
 }
-

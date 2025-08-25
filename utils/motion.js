@@ -1,9 +1,11 @@
 import { Variants } from "framer-motion";
 
-export const staggerContainer = (
-  staggerChildren?: number,
-  delayChildren?: number
-): Variants => ({
+/**
+ * @param {number} [staggerChildren]
+ * @param {number} [delayChildren]
+ * @returns {Variants}
+ */
+export const staggerContainer = (staggerChildren, delayChildren) => ({
   hidden: {},
   show: {
     transition: {
@@ -13,7 +15,11 @@ export const staggerContainer = (
   },
 });
 
-export const textVariant = (delay?: number): Variants => ({
+/**
+ * @param {number} [delay]
+ * @returns {Variants}
+ */
+export const textVariant = (delay) => ({
   hidden: {
     y: 50,
     opacity: 0,
@@ -29,12 +35,14 @@ export const textVariant = (delay?: number): Variants => ({
   },
 });
 
-export const fadeIn = (
-  direction: "up" | "down" | "left" | "right",
-  type: string,
-  delay: number,
-  duration: number
-): Variants => ({
+/**
+ * @param {"up" | "down" | "left" | "right"} direction
+ * @param {string} type
+ * @param {number} delay
+ * @param {number} duration
+ * @returns {Variants}
+ */
+export const fadeIn = (direction, type, delay, duration) => ({
   hidden: {
     x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
     y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
@@ -53,7 +61,12 @@ export const fadeIn = (
   },
 });
 
-export const zoomIn = (delay: number, duration: number): Variants => ({
+/**
+ * @param {number} delay
+ * @param {number} duration
+ * @returns {Variants}
+ */
+export const zoomIn = (delay, duration) => ({
   hidden: {
     scale: 0,
     opacity: 0,
@@ -70,12 +83,14 @@ export const zoomIn = (delay: number, duration: number): Variants => ({
   },
 });
 
-export const slideIn = (
-  direction: "up" | "down" | "left" | "right",
-  type: string,
-  delay: number,
-  duration: number
-): Variants => ({
+/**
+ * @param {"up" | "down" | "left" | "right"} direction
+ * @param {string} type
+ * @param {number} delay
+ * @param {number} duration
+ * @returns {Variants}
+ */
+export const slideIn = (direction, type, delay, duration) => ({
   hidden: {
     x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
     y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,

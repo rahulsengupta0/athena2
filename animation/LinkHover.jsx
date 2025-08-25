@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { TLinkHoverProps } from "@/types";
 
-export default function LinkHover({ href, title, className }: TLinkHoverProps) {
+export default function LinkHover({ href, title, className }) {
 	return (
 		<div>
 			<Link
