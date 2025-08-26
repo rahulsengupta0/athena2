@@ -33,7 +33,7 @@ export default function ProjectCard({ item }: { item: any }) {
 								ease: [0.4, 0, 0.2, 1],
 							}}
 							className="text-[165px] leading-none inline-block uppercase font-FoundersGrotesk font-bold text-center pointer-events-none"
-style={{ color: "#005A9C" }}
+style={{ color: "#6495ED" }}
 
 							key={i}>
 							{item}

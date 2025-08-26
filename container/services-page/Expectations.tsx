@@ -126,9 +126,10 @@ export default function Expectations() {
         style={{ backgroundColor: "transparent" }}
       >
         <Marquee
-          title="Athena LMS Excellence"
-          className="pb-[50px] lg:pb-[40px] md:pb-[30px] sm:pb-[30px] xm:pb-[15px] text-[540px] leading-[330px] lg:text-[380px] lg:leading-[240px] md:text-[300px] md:leading-[160px] sm:text-[230px] sm:leading-[140px] xm:text-[130px] xm:leading-[80px]"
-        />
+  title="Athena LMS Excellence"
+  className="pb-[32px] lg:pb-[26px] md:pb-[20px] sm:pb-[20px] xm:pb-[12px] text-[350px] leading-[210px] lg:text-[250px] lg:leading-[160px] md:text-[200px] md:leading-[110px] sm:text-[150px] sm:leading-[90px] xm:text-[100px] xm:leading-[60px]"
+/>
+
       </div>
       
       <div className="w-full padding-x py-[20px] flex flex-row sm:flex-col xm:flex-col gap-[20px] relative z-20">

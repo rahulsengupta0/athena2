@@ -128,9 +128,10 @@ export default function Team() {
 
       <div className="w-full bg-[#004687] z-10 relative rounded-t-[20px] pt-16 pb-8">
         <Marquee
-          title="the team core of"
-          className="pb-[50px] lg:pb-[40px] md:pb-[30px] sm:pb-[25px] xm:pb-[18px] text-[540px] leading-[330px] lg:text-[380px] lg:leading-[240px] md:text-[300px] md:leading-[160px] sm:text-[230px] sm:leading-[140px] xm:text-[130px] xm:leading-[80px]"
-        />
+  title="the team core of"
+  className="pb-[28px] lg:pb-[22px] md:pb-[16px] sm:pb-[14px] xm:pb-[12px] text-[280px] leading-[170px] lg:text-[220px] lg:leading-[130px] md:text-[180px] md:leading-[100px] sm:text-[140px] sm:leading-[90px] xm:text-[90px] xm:leading-[50px]"
+/>
+
       </div>
 
       <div ref={ref} className="w-full bg-[#004687] flex items-center justify-center pb-16 px-4">
