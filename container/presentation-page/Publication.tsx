@@ -8,9 +8,10 @@ export default function Publication() {
   <div className="w-full bg-[#005A9C] z-10 relative">
 
 				<Marquee
-					title="why athena"
-					className="pb-[50px] lg:pb-[40px] md:pb-[30px] sm:pb-[20px] xm:pb-[15px] text-[540px] leading-[330px] lg:text-[380px] lg:leading-[240px] md:text-[300px] md:leading-[160px] sm:text-[230px] sm:leading-[140px] xm:text-[130px] xm:leading-[80px]"
-				/>
+  title="why athena"
+  className="pb-[40px] lg:pb-[32px] md:pb-[24px] sm:pb-[18px] xm:pb-[12px] text-[380px] leading-[230px] lg:text-[280px] lg:leading-[180px] md:text-[230px] md:leading-[130px] sm:text-[180px] sm:leading-[110px] xm:text-[110px] xm:leading-[70px]"
+/>
+
 			</div>
 			<div className="w-full padding-x">
 				<div className="w-full flex justify-between pt-[20px] sm:flex-col xm:flex-col gap-y-[20px]">
