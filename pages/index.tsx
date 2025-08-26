@@ -26,7 +26,7 @@ export default function Home() {
 </div>
 
 				<About />
-				<VideoHome />
+				{/* <VideoHome /> */}
 				<Projects />
 				<Clients />
 				<Ready />
