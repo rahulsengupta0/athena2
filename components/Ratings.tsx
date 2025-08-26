@@ -98,7 +98,7 @@ export default function Ratings() {
               className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg"
             >
               <p className="text-sm font-medium text-slate-700">Serving</p>
-              <p className="text-2xl font-bold text-slate-900">100+ Learners</p>
+              <p className="text-2xl font-bold text-slate-900">500+ Learners</p>
             </motion.div>
           </div>
         </div>
