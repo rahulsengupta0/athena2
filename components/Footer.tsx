@@ -193,6 +193,7 @@ export default function Footer() {
             <Link href="https://tiktok.com" target="_blank" aria-label="TikTok" className="text-sky-700 hover:text-black transition-colors">
               <FaTiktok className="w-5 h-5" />
             </Link>
+            
           </div>
           <div className="flex flex-wrap gap-4 justify-center mt-2 md:mt-0">
             <Link href="/privacy" className="text-sky-800 hover:text-blue-700 transition-colors">
