@@ -22,7 +22,7 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "JAVED IRSHAD",
+    name: "JAVED",
     role: "Co-Founder",
     image: Paul, // Replace with actual image
     bio: "Education specialist with 25 years of experience, including 8 years in e-learning and content writing. Expert in designing engaging learning experiences that drive measurable results.",
