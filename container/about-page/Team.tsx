@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Paul } from "@/public";
 import { Marquee } from "@/components";
@@ -10,51 +11,28 @@ const teamMembers = [
   {
     id: 1,
     name: "PAULMICHAEL ROWLAND",
-    role: "Founder and CEO",
+    role: "Co-Founder",
     image: Paul,
     bio: "Visionary leader with over 15 years of experience in educational technology. Passionate about creating learning solutions that transform lives.",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/paulmichael-rowland-266343223",
       twitter: "#",
       email: "#"
     }
   },
   {
     id: 2,
-    name: "SARAH JOHNSON",
-    role: "Chief Learning Officer",
+    name: "JAMESH IRSHAD",
+    role: "Co-Founder",
     image: Paul, // Replace with actual image
-    bio: "Education specialist with a PhD in Instructional Design. Creates engaging learning experiences that drive results.",
+    bio: "Education specialist with 25 years of experience, including 8 years in e-learning and content writing. Expert in designing engaging learning experiences that drive measurable results.",
     social: {
       linkedin: "#",
       twitter: "#",
       email: "#"
     }
   },
-  {
-    id: 3,
-    name: "DAVID CHEN",
-    role: "CTO",
-    image: Paul, // Replace with actual image
-    bio: "Tech innovator with expertise in scalable learning platforms. Believes technology should empower educators and learners.",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    id: 4,
-    name: "EMMA WILSON",
-    role: "Head of Design",
-    image: Paul, // Replace with actual image
-    bio: "Award-winning designer focused on creating intuitive, beautiful learning interfaces that enhance user experience.",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      email: "#"
-    }
-  }
+  // Add more team members as needed
 ];
 
 export default function Team() {
@@ -160,6 +138,7 @@ export default function Team() {
                     alt={teamMembers[activeMember].name}
                     fill
                     className="object-cover"
+                    priority={activeMember === 0}
                   />
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -170,21 +149,25 @@ export default function Team() {
                   <motion.a
                     whileHover={{ y: -5, scale: 1.1 }}
                     href={teamMembers[activeMember].social.linkedin}
-                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm"
+                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Linkedin size={18} />
                   </motion.a>
                   <motion.a
                     whileHover={{ y: -5, scale: 1.1 }}
                     href={teamMembers[activeMember].social.twitter}
-                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm"
+                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Twitter size={18} />
                   </motion.a>
                   <motion.a
                     whileHover={{ y: -5, scale: 1.1 }}
                     href={`mailto:${teamMembers[activeMember].social.email}`}
-                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm"
+                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
                   >
                     <Mail size={18} />
                   </motion.a>
@@ -199,11 +182,11 @@ export default function Team() {
                   </span>
                 </div>
                 
-                <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+                <h1 className="text-4xl lg:text-5xl font-bold mb-4 font-FoundersGrotesk">
                   {teamMembers[activeMember].name}
                 </h1>
                 
-                <p className="text-lg text-white/80 mb-6 leading-relaxed">
+                <p className="text-lg text-white/80 mb-6 leading-relaxed font-NeueMontreal">
                   {teamMembers[activeMember].bio}
                 </p>
                 
@@ -212,7 +195,8 @@ export default function Team() {
                     whileHover={{ x: -5 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={prevMember}
-                    className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm"
+                    className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
+                    disabled={teamMembers.length <= 1}
                   >
                     <ArrowLeft size={20} />
                   </motion.button>
@@ -225,7 +209,8 @@ export default function Team() {
                     whileHover={{ x: 5 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={nextMember}
-                    className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm"
+                    className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm hover:bg-white/20 transition-colors"
+                    disabled={teamMembers.length <= 1}
                   >
                     <ArrowRight size={20} />
                   </motion.button>
@@ -234,21 +219,23 @@ export default function Team() {
             </div>
           </div>
 
-          {/* Team member indicators */}
-          <motion.div
-            variants={itemVariants}
-            className="flex justify-center mt-8 gap-2"
-          >
-            {teamMembers.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveMember(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === activeMember ? "bg-cyan-400 scale-125" : "bg-white/30"
-                }`}
-              />
-            ))}
-          </motion.div>
+          {/* Team member indicators - Only show if more than 1 member */}
+          {teamMembers.length > 1 && (
+            <motion.div
+              variants={itemVariants}
+              className="flex justify-center mt-8 gap-2"
+            >
+              {teamMembers.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveMember(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === activeMember ? "bg-cyan-400 scale-125" : "bg-white/30 hover:bg-white/50"
+                  }`}
+                />
+              ))}
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </section>

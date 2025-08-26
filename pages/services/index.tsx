@@ -25,7 +25,7 @@ export default function Services() {
 				{/* <Capibilyties /> */}
 				{/* <Archive /> */}
 				<Expectations />
-				<Ready />
+				{/* <Ready /> */}
 			</Curve>
 		</>
 	);

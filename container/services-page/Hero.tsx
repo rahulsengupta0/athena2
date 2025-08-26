@@ -59,14 +59,15 @@ export default function Hero() {
         </motion.h1>
 
         {/* Tagline */}
-        <motion.p
-          className="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed drop-shadow"
-          variants={item}
-        >
-          Athena LMS transforms education with modern tools that make learning
-          more engaging, accessible, and impactful — for institutions, teachers,
-          and learners alike.
-        </motion.p>
+       <motion.p
+  className="mt-6 text-lg md:text-xl text-gray-50 max-w-2xl leading-relaxed drop-shadow"
+  variants={item}
+>
+  Athena LMS transforms education with modern tools that make learning
+  more engaging, accessible, and impactful — for institutions, teachers,
+  and learners alike.
+</motion.p>
+
 
         {/* Feature Pills */}
         <motion.div
