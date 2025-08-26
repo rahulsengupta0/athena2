@@ -21,23 +21,25 @@ export default function Footer() {
               Transforming education through innovative technology and personalized learning experiences.
             </p>
             <div className="text-sm text-sky-800 mb-4">
-              <p className="font-medium text-sky-900">Athena LMS Edutech Pvt. Ltd.</p>
-              <p>456 Learning Avenue</p>
-              <p>Vancouver, Canada</p>
+              <p className="font-medium text-sky-900">LMSAthena </p>
+              <p>Kirkland Washington, USA</p>
+              <br />
+              <p>GF-41, Omaxe Square, Jasola District Centre</p>
+              <p>New Delhi-25</p>
               <p className="mt-2">
-                <a href="mailto:hello@athena.lms" className="text-blue-700 hover:underline font-medium">hello@athena.lms</a>
+                <a href="mailto:hello@athena.lms" className="text-blue-700 hover:underline font-medium">counselor@lmsathena.com</a>
               </p>
               <p>
-                <a href="tel:+16045551244" className="text-sky-800 hover:text-sky-900">+1 (604) 555-1244</a>
+                <a href="tel:+16045551244" className="text-sky-800 hover:text-sky-900">+91 9818238969</a>
               </p>
               <div className="mt-3 space-y-1">
                 <p className="flex items-center">
                   <span className="inline-block w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                  <span>Monday - Friday: 09:00 - 18:00</span>
+                  <span>Monday - Friday: 9:00 AM to 5:00 PM EST</span>
                 </p>
                 <p className="flex items-center">
-                  <span className="inline-block w-2 h-2 bg-red-500 rounded-full mr-2"></span>
-                  <span>Saturday - Sunday: Closed</span>
+                  {/* <span className="inline-block w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                  <span>Saturday - Sunday: Closed</span> */}
                 </p>
               </div>
             </div>

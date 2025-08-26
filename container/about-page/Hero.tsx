@@ -9,8 +9,22 @@ import { ArrowUpRight } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-gradient-to-b from-[#e6f2ff] via-[#f0f7ff] to-[#d9ecff]">
+      {/* --- Video Background --- */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/Features.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {/* --- Light Blue Overlay --- */}
+      <div className="absolute inset-0 bg-blue-100/80 z-10 pointer-events-none" />
+
       {/* Floating Particles Background */}
-      <div className="absolute inset-0 overflow-hidden z-0">
+      <div className="absolute inset-0 overflow-hidden z-20">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
@@ -35,7 +49,7 @@ export default function Hero() {
       </div>
 
       {/* Top Heading */}
-      <div className="padding-x pt-24 relative z-10">
+      <div className="padding-x pt-24 relative z-30">
         <motion.h1
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -78,12 +92,12 @@ export default function Hero() {
 
       {/* Content Row */}
       <div className="flex flex-col lg:flex-row items-center justify-between padding-x gap-12 mt-16 relative">
-        {/* Left - (Removed About Section) */}
+        {/* Left */}
         <motion.div
           initial={{ x: -80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="lg:w-1/2 w-full flex flex-col gap-8 relative z-10"
+          className="lg:w-1/2 w-full flex flex-col gap-8 relative z-30"
         >
           {/* CTA Buttons */}
           <motion.div
@@ -113,7 +127,7 @@ export default function Hero() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="lg:w-1/2 w-full flex justify-center relative"
+          className="lg:w-1/2 w-full flex justify-center relative z-30"
           whileHover={{ scale: 1.05 }}
         >
           <div className="relative">
@@ -129,7 +143,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1 }}
-        className="padding-x pb-16 relative z-10"
+        className="padding-x pb-16 relative z-30"
       >
         <h2 className="sub-heading font-medium font-NeueMontreal text-[#0f172a]">
           We transform complex ideas into{" "} engaging learning experiences.
