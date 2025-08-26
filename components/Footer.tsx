@@ -194,7 +194,6 @@ export default function Footer() {
               <FaTiktok className="w-5 h-5" />
             </Link>
           </div>
-          
           <div className="flex flex-wrap gap-4 justify-center mt-2 md:mt-0">
             <Link href="/privacy" className="text-sky-800 hover:text-blue-700 transition-colors">
               Privacy
