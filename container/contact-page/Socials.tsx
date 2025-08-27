@@ -53,9 +53,11 @@ export default function Socials() {
 						<div className="w-[50%] sm:w-full xm:w-full flex sm:flex-col xm:flex-col justify-between gap-y-[20px]">
 							<div>
 								<div className="flex flex-col gap-y-[10px]">
-									<LinkHover title={`Athena LMS Edutech Pvt. Ltd.`} href="/" />
-									<LinkHover title={`456 Learning Avenue,`} href="/" />
-									<LinkHover title="St Lviv, Ukraine" href="/" />
+									<LinkHover title={`LMSAthena`} href="/" />
+									<LinkHover title={`Kirkland Washington, USA`} href="/" />
+									<LinkHover title="GF-41, Omaxe Square, Jasola District Centre
+
+New Delhi-25" href="/" />
 								</div>
 							</div>
 							<div className="flex w-fit h-fit gap-x-[5px] group">

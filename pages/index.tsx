@@ -19,10 +19,10 @@ export default function Home() {
     className="w-full z-10 relative rounded-t-[20px] padding-y"
     style={{ backgroundColor: "#005A9C" }}
 >
-    <Marquee
+    {/* <Marquee
   title="I AM ATHENA"
   className="pb-[20px] lg:pb-[16px] md:pb-[12px] sm:pb-[10px] xm:pb-[8px] text-[240px] leading-[150px] lg:text-[180px] lg:leading-[110px] md:text-[140px] md:leading-[80px] sm:text-[110px] sm:leading-[70px] xm:text-[70px] xm:leading-[40px]"
-/>
+/> */}
 
 </div>
 
