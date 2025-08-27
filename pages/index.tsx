@@ -1,7 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import { Curve, Marquee, Ready } from "@/components";
-import { About, Clients, Hero, Projects, VideoHome } from "@/container";
+import { About, Clients, Features, Hero, Projects, VideoHome } from "@/container";
+import { Feather } from "lucide-react";
 
 export default function Home() {
 	useEffect(() => {
@@ -28,8 +29,9 @@ export default function Home() {
 
 				<About />
 				{/* <VideoHome /> */}
-				<Projects />
-				<Clients />
+				{/* <Projects /> */}
+				<Features/>
+				{/* <Clients /> */}
 				<Ready />
 			</Curve>
 		</>
