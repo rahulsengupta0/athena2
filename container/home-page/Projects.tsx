@@ -517,10 +517,10 @@ const AthenaFeatures: React.FC = () => {
   const filteredFeatures = features.filter(feature => feature.category === activeCategory);
 
   // FIXED: Explicitly typed array of Feature arrays
-  const featurePairs: Feature[][] = [];
-  for (let i = 0; i < filteredFeatures.length; i += 2) {
-    featurePairs.push(filteredFeatures.slice(i, i + 2));
-  }
+const featurePairs: Feature[][] = Array.from(
+  { length: Math.ceil(filteredFeatures.length / 2) },
+  (_, i) => filteredFeatures.slice(i * 2, i * 2 + 2)
+);
 
   useEffect(() => {
     if (isInView) controls.start("visible");
