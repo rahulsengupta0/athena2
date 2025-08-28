@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
   AthenaDas,
   capaybilities1,
@@ -9,44 +9,43 @@ import {
   capaybilities4,
   capaybilities5,
   chelengeBg,
-  client03,
   latest2,
 } from "@/public";
 
 const features = [
   {
-    title: "Complete Content Authoring Tool",
-    desc: "Create, edit, and organize course content with real-time previews and a user-friendly interface designed for educators.",
+    title: "Content Authoring & Learning Design Studio",
+    desc: "Create, edit, and organize course content with advanced tools that empower educators to build engaging learning journeys.",
     image: capaybilities1,
   },
   {
-    title: "AI-Powered Course Generation",
-    desc: "Leverage AI to quickly draft lessons, quizzes, and interactive modules from basic topic outlines.",
+    title: "Collaborative Communities & Intelligent Communication Hub",
+    desc: "Connect learners and instructors seamlessly with messaging, discussion forums, and collaborative study tools.",
     image: AthenaDas,
   },
   {
-    title: "Personalized Learning Paths",
-    desc: "Smart algorithms adapt course recommendations to learner progress, engagement, and goals.",
+    title: "AI-Powered Content Personalization & Co-Creation",
+    desc: "Leverage AI to tailor learning materials for each student and enable collaborative content creation.",
     image: capaybilities2,
   },
   {
-    title: "Integrated Video & Assessment",
-    desc: "Embed HD video, run interactive assessments, and track performance metrics from a central dashboard.",
+    title: "Comprehensive Learning Analytics & Actionable Insights",
+    desc: "Gain deep understanding of learner progress and engagement with insightful dashboards and reports.",
     image: capaybilities3,
   },
   {
-    title: "Collaborative Classroom Tools",
-    desc: "Live discussions, peer reviews, and instructor messaging unify your digital classroom experience.",
+    title: "All-in-One SaaS Ecosystem for Learning & Growth",
+    desc: "Manage courses, users, payments, and more from a unified cloud-based platform.",
     image: capaybilities4,
   },
   {
-    title: "Certification & Analytics",
-    desc: "Issue certificates, measure completion rates, and visualize engagement analytics with easy export options.",
+    title: "Interactive Assessments & Smart Evaluation Engine",
+    desc: "Create dynamic quizzes and assignments with automated grading to boost learner success.",
     image: capaybilities5,
   },
   {
     title: "Mobile Learning Support",
-    desc: "Responsive layouts and offline sync ensure seamless learning across devices.",
+    desc: "Seamless learning across devices with offline access and responsive design.",
     image: chelengeBg,
   },
   {
@@ -56,15 +55,58 @@ const features = [
   },
 ];
 
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 10
+    }
+  }
+};
+
+const thumbnailVariants = {
+  hidden: { scale: 0.8, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      duration: 0.6
+    }
+  }
+};
+
 export default function Features() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-20%" });
 
   return (
-    <section
+    <motion.section
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
       className="relative w-full min-h-[600px] rounded-2xl shadow-lg p-6 md:p-8 lg:p-10 overflow-hidden"
       style={{
-        background:
-          "linear-gradient(135deg, #87CEFA 0%, #ffffff 70%)",
+        background: "linear-gradient(135deg, #87CEFA 0%, #ffffff 70%)",
       }}
     >
       {/* Subtle wave pattern SVG overlay */}
@@ -81,23 +123,73 @@ export default function Features() {
         ></path>
       </svg>
 
-      {/* Header Section */}
-      <div className="relative z-10 text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
-          Features
-        </h2>
-        <p className="text-gray-700 max-w-2xl mx-auto text-lg">
-          Next-generation LMS capabilities to engage, empower, and analyze.
-        </p>
+      {/* Header Section - Enhanced */}
+      <div className="relative z-10 text-center mb-8 md:mb-12">
+        <motion.div
+          variants={itemVariants}
+          className="mb-4"
+        >
+          <motion.span 
+            className="inline-block px-3 py-1 text-xs font-semibold text-indigo-700 bg-indigo-100 rounded-full mb-3"
+            initial={{ scale: 0 }}
+            animate={isInView ? { scale: 1 } : { scale: 0 }}
+            transition={{ delay: 0.2, type: "spring" }}
+          >
+            POWERFUL CAPABILITIES
+          </motion.span>
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight"
+            initial={{ y: 30, opacity: 0 }}
+            animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+          >
+            Transformative Learning <span className="text-indigo-600">Experiences</span>
+          </motion.h2>
+          <motion.div 
+            className="w-24 h-1 bg-indigo-500 mx-auto mb-4 rounded-full"
+            initial={{ width: 0 }}
+            animate={isInView ? { width: "6rem" } : { width: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          />
+        </motion.div>
+        
+        <motion.div
+          variants={itemVariants}
+          className="max-w-3xl mx-auto"
+        >
+          <motion.p 
+            className="text-xl md:text-2xl font-semibold text-gray-800 mb-3"
+            initial={{ y: 20, opacity: 0 }}
+            animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
+            All-in-One SaaS Ecosystem for Learning & Growth
+          </motion.p>
+          <motion.p 
+            className="text-gray-600 text-lg"
+            initial={{ y: 20, opacity: 0 }}
+            animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+          >
+            Next-generation LMS capabilities designed to <span className="font-medium text-indigo-600">engage</span> learners, <span className="font-medium text-indigo-600">empower</span> educators, and <span className="font-medium text-indigo-600">analyze</span> outcomes.
+          </motion.p>
+        </motion.div>
       </div>
 
       <div className="relative z-10 flex flex-col lg:flex-row gap-8 md:gap-12">
         {/* Left Panel: Thumbnail Grid */}
-        <div className="lg:w-2/5">
-          <div className="grid grid-cols-4 gap-3 md:gap-4">
+        <motion.div 
+          className="lg:w-2/5"
+          variants={containerVariants}
+        >
+          <motion.div 
+            className="grid grid-cols-4 gap-3 md:gap-4"
+            variants={containerVariants}
+          >
             {features.map((feature, idx) => (
               <motion.button
                 key={idx}
+                variants={thumbnailVariants}
                 className={`w-full aspect-square rounded-lg overflow-hidden cursor-pointer transition-all ${
                   activeIdx === idx
                     ? "ring-3 ring-indigo-500 shadow-lg scale-105 backdrop-blur-sm bg-white/30"
@@ -117,16 +209,21 @@ export default function Features() {
                 />
               </motion.button>
             ))}
-          </div>
-          <div className="mt-6 text-center lg:text-right">
-            <a
+          </motion.div>
+          <motion.div 
+            className="mt-6 text-center lg:text-right"
+            variants={itemVariants}
+          >
+            <motion.a
               href="#"
-              className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors group"
+              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors group shadow-md"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              View All Features
+              Explore All Features
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform"
+                className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -136,12 +233,18 @@ export default function Features() {
                   clipRule="evenodd"
                 />
               </svg>
-            </a>
-          </div>
-        </div>
+            </motion.a>
+          </motion.div>
+        </motion.div>
 
-        {/* Right Panel: Big Square Image + Content */}
-        <div className="lg:w-3/5 flex flex-col justify-center backdrop-blur-xl bg-white/40 rounded-2xl p-6 shadow-lg">
+        {/* Right Panel: Big Square Image + Content with Gradient Background */}
+        <motion.div 
+          className="lg:w-3/5 flex flex-col justify-center rounded-2xl p-6 shadow-lg backdrop-blur-sm"
+          style={{
+            background: "linear-gradient(135deg, rgba(135, 206, 250, 0.4) 0%, rgba(255, 255, 255, 0.7) 70%)",
+          }}
+          variants={itemVariants}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIdx}
@@ -152,7 +255,15 @@ export default function Features() {
               className="flex flex-col lg:flex-row items-center gap-8"
             >
               {/* Square Image Container with glassmorphism */}
-              <div className="w-full lg:w-2/5 rounded-2xl overflow-hidden shadow-lg border border-white/30">
+              <motion.div 
+                className="w-full lg:w-2/5 rounded-2xl overflow-hidden shadow-lg border border-white/30"
+                style={{
+                  background: "linear-gradient(135deg, rgba(135, 206, 250, 0.3) 0%, rgba(255, 255, 255, 0.6) 70%)",
+                }}
+                initial={{ x: -30, opacity: 0 }}
+                animate={isInView ? { x: 0, opacity: 1 } : { x: -30, opacity: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+              >
                 <img
                   src={features[activeIdx].image.src}
                   alt={features[activeIdx].title}
@@ -164,10 +275,15 @@ export default function Features() {
                     Preview of {features[activeIdx].title}
                   </span>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Content */}
-              <div className="w-full lg:w-3/5">
+              <motion.div 
+                className="w-full lg:w-3/5"
+                initial={{ x: 30, opacity: 0 }}
+                animate={isInView ? { x: 0, opacity: 1 } : { x: 30, opacity: 0 }}
+                transition={{ delay: 1, duration: 0.6 }}
+              >
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   {features[activeIdx].title}
                 </h3>
@@ -180,22 +296,22 @@ export default function Features() {
                       <button
                         key={idx}
                         className={`w-3 h-3 rounded-full ${
-                          activeIdx === idx ? "bg-indigo-600" : "bg-gray-300"
+                          activeIdx === idx ? "bg-indigo-600" : "bg-gray-400"
                         }`}
                         onClick={() => setActiveIdx(idx)}
                         aria-label={`View feature ${idx + 1}`}
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-500 ml-3">
+                  <span className="text-sm text-gray-600 ml-3">
                     {activeIdx + 1} of {features.length}
                   </span>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
