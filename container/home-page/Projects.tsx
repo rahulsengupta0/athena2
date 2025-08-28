@@ -362,88 +362,78 @@
 
 // export default AthenaFeatures;
 
-
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useAnimation, AnimatePresence } from 'framer-motion';
 
-// SVG Icons
+// ==== SVG Icons ====
 const ContentAuthoringIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
   </svg>
 );
-
 const CollaborationIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
   </svg>
 );
-
 const PersonalizationIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
   </svg>
 );
-
 const AnalyticsIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
   </svg>
 );
-
 const EcosystemIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
   </svg>
 );
-
 const AssessmentIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
   </svg>
 );
 
-const AthenaFeatures = () => {
+// ==== TYPES ====
+interface Feature {
+  id: number;
+  title: string;
+  description: string;
+  icon: JSX.Element;
+  category: number;
+  color: string;
+  bgColor: string;
+  details: string[];
+}
+
+interface Category {
+  id: number;
+  name: string;
+  color: string;
+  bgColor: string;
+  icon: string;
+}
+
+const AthenaFeatures: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [activeFeature, setActiveFeature] = useState(0);
   const [isAutoRotating, setIsAutoRotating] = useState(true);
-  const ref = useRef(null);
+
+  const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const controls = useAnimation();
-  
-  const categories = [
-    {
-      id: 1,
-      name: "Content Creation",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
-      icon: "📝"
-    },
-    {
-      id: 2,
-      name: "Collaboration",
-      color: "from-indigo-500 to-purple-500",
-      bgColor: "bg-gradient-to-br from-indigo-50 to-purple-50",
-      icon: "👥"
-    },
-    {
-      id: 3,
-      name: "AI & Personalization",
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
-      icon: "🤖"
-    },
-    {
-      id: 4,
-      name: "Analytics & Insights",
-      color: "from-teal-500 to-green-500",
-      bgColor: "bg-gradient-to-br from-teal-50 to-green-50",
-      icon: "📊"
-    }
+
+  const categories: Category[] = [
+    { id: 1, name: "Content Creation", color: "from-blue-500 to-cyan-500", bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50", icon: "📝" },
+    { id: 2, name: "Collaboration", color: "from-indigo-500 to-purple-500", bgColor: "bg-gradient-to-br from-indigo-50 to-purple-50", icon: "👥" },
+    { id: 3, name: "AI & Personalization", color: "from-purple-500 to-pink-500", bgColor: "bg-gradient-to-br from-purple-50 to-pink-50", icon: "🤖" },
+    { id: 4, name: "Analytics & Insights", color: "from-teal-500 to-green-500", bgColor: "bg-gradient-to-br from-teal-50 to-green-50", icon: "📊" }
   ];
 
-  const features = [
-    // Content Creation features
+  const features: Feature[] = [
     {
       id: 1,
       title: "Content Authoring Studio",
@@ -452,14 +442,7 @@ const AthenaFeatures = () => {
       category: 0,
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
-      details: [
-        "Drag-and-drop course builder",
-        "Multimedia content support",
-        "Interactive elements library",
-        "Responsive design templates",
-        "SCORM and xAPI compliant",
-        "Version control and history"
-      ]
+      details: ["Drag-and-drop course builder", "Multimedia content support", "Interactive elements library", "Responsive design templates", "SCORM and xAPI compliant", "Version control and history"]
     },
     {
       id: 2,
@@ -469,16 +452,8 @@ const AthenaFeatures = () => {
       category: 0,
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
-      details: [
-        "Unified learning environment",
-        "Seamless integration capabilities",
-        "Scalable cloud infrastructure",
-        "Multi-tenant architecture",
-        "Continuous update pipeline",
-        "Enterprise-grade security"
-      ]
+      details: ["Unified learning environment", "Seamless integration capabilities", "Scalable cloud infrastructure", "Multi-tenant architecture", "Continuous update pipeline", "Enterprise-grade security"]
     },
-    // Collaboration features
     {
       id: 3,
       title: "Collaborative Communities",
@@ -487,14 +462,7 @@ const AthenaFeatures = () => {
       category: 1,
       color: "from-indigo-500 to-purple-500",
       bgColor: "bg-gradient-to-br from-indigo-50 to-purple-50",
-      details: [
-        "Discussion forums & spaces",
-        "Real-time collaboration tools",
-        "Group project management",
-        "Peer review system",
-        "Knowledge sharing hubs",
-        "Mentorship programs"
-      ]
+      details: ["Discussion forums & spaces", "Real-time collaboration tools", "Group project management", "Peer review system", "Knowledge sharing hubs", "Mentorship programs"]
     },
     {
       id: 4,
@@ -504,16 +472,8 @@ const AthenaFeatures = () => {
       category: 1,
       color: "from-indigo-500 to-purple-500",
       bgColor: "bg-gradient-to-br from-indigo-50 to-purple-50",
-      details: [
-        "Smart notifications",
-        "Intelligent moderation",
-        "Engagement analytics",
-        "Discussion analytics",
-        "Automated follow-ups",
-        "Role-based communication"
-      ]
+      details: ["Smart notifications", "Intelligent moderation", "Engagement analytics", "Discussion analytics", "Automated follow-ups", "Role-based communication"]
     },
-    // AI & Personalization features
     {
       id: 5,
       title: "AI-Powered Personalization",
@@ -522,14 +482,7 @@ const AthenaFeatures = () => {
       category: 2,
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
-      details: [
-        "Adaptive learning paths",
-        "AI content recommendations",
-        "Automated difficulty adjustment",
-        "Personalized feedback system",
-        "Predictive performance analysis",
-        "Learning style adaptation"
-      ]
+      details: ["Adaptive learning paths", "AI content recommendations", "Automated difficulty adjustment", "Personalized feedback system", "Predictive performance analysis", "Learning style adaptation"]
     },
     {
       id: 6,
@@ -539,16 +492,8 @@ const AthenaFeatures = () => {
       category: 2,
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
-      details: [
-        "AI content suggestions",
-        "Automated outline generation",
-        "Content enhancement tools",
-        "Multimedia recommendations",
-        "Accessibility improvements",
-        "Multilingual support"
-      ]
+      details: ["AI content suggestions", "Automated outline generation", "Content enhancement tools", "Multimedia recommendations", "Accessibility improvements", "Multilingual support"]
     },
-    // Analytics & Insights features
     {
       id: 7,
       title: "Learning Analytics Dashboard",
@@ -557,14 +502,7 @@ const AthenaFeatures = () => {
       category: 3,
       color: "from-teal-500 to-green-500",
       bgColor: "bg-gradient-to-br from-teal-50 to-green-50",
-      details: [
-        "Engagement heatmaps",
-        "Knowledge retention tracking",
-        "Skill gap analysis",
-        "ROI measurement tools",
-        "Custom report builder",
-        "Predictive analytics"
-      ]
+      details: ["Engagement heatmaps", "Knowledge retention tracking", "Skill gap analysis", "ROI measurement tools", "Custom report builder", "Predictive analytics"]
     },
     {
       id: 8,
@@ -574,82 +512,57 @@ const AthenaFeatures = () => {
       category: 3,
       color: "from-teal-500 to-green-500",
       bgColor: "bg-gradient-to-br from-teal-50 to-green-50",
-      details: [
-        "Interactive question types",
-        "Auto-grading system",
-        "Plagiarism detection",
-        "Performance analytics",
-        "Competency mapping",
-        "Real-time feedback"
-      ]
+      details: ["Interactive question types", "Auto-grading system", "Plagiarism detection", "Performance analytics", "Competency mapping", "Real-time feedback"]
     }
   ];
 
   const filteredFeatures = features.filter(feature => feature.category === activeCategory);
-  const featurePairs = [];
+
+  // ==== FIX: Typed array ====
+  const featurePairs: Feature[][] = [];
   for (let i = 0; i < filteredFeatures.length; i += 2) {
     featurePairs.push(filteredFeatures.slice(i, i + 2));
   }
 
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
+    if (isInView) controls.start("visible");
   }, [isInView, controls]);
 
   useEffect(() => {
-    let interval;
+    let interval: ReturnType<typeof setInterval> | undefined;
     if (isAutoRotating && featurePairs.length > 1) {
       interval = setInterval(() => {
-        setActiveFeature((prev) => (prev + 1) % featurePairs.length);
+        setActiveFeature(prev => (prev + 1) % featurePairs.length);
       }, 5000);
     }
-    return () => clearInterval(interval);
+    return () => interval && clearInterval(interval);
   }, [isAutoRotating, activeCategory, featurePairs.length]);
 
-  const handleCategoryChange = (index) => {
+  const handleCategoryChange = (index: number) => {
     setActiveCategory(index);
     setActiveFeature(0);
     setIsAutoRotating(true);
   };
-
-  const handleFeatureChange = (index) => {
+  const handleFeatureChange = (index: number) => {
     setActiveFeature(index);
     setIsAutoRotating(false);
   };
 
+  // === Animations ===
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
+      transition: { staggerChildren: 0.2 }
     }
   };
-
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }
   };
-
   const featureImageVariants = {
     hidden: { opacity: 0, x: 50 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut"
-      }
-    }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
   };
 
   return (
@@ -658,9 +571,8 @@ const AthenaFeatures = () => {
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
+        }} />
       </div>
-
       {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         {[...Array(10)].map((_, i) => (
@@ -687,7 +599,6 @@ const AthenaFeatures = () => {
           />
         ))}
       </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
         <motion.div 
@@ -700,24 +611,6 @@ const AthenaFeatures = () => {
           }}
           className="text-center mb-16"
         >
-          <motion.div
-            animate={{ 
-              scale: [1, 1.05, 1]
-            }}
-            transition={{ 
-              duration: 6, 
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}
-            className="inline-block mb-6"
-          >
-            {/* <div className="text-5xl mb-2 text-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-            </div> */}
-          </motion.div>
-          
           <motion.h1 
             className="text-4xl font-bold text-slate-800 sm:text-5xl sm:tracking-tight lg:text-6xl mb-6"
             initial={{ opacity: 0, y: -10 }}
@@ -728,7 +621,6 @@ const AthenaFeatures = () => {
               Athena LMS Features
             </span>
           </motion.h1>
-          
           <motion.p 
             className="mt-5 max-w-3xl mx-auto text-xl text-slate-600"
             initial={{ opacity: 0 }}
@@ -738,7 +630,6 @@ const AthenaFeatures = () => {
             The next-generation learning ecosystem designed to transform education through innovation, intelligence, and immersive experiences.
           </motion.p>
         </motion.div>
-
         {/* Category Selector */}
         <motion.div 
           className="flex flex-wrap justify-center gap-4 mb-12"
@@ -759,10 +650,9 @@ const AthenaFeatures = () => {
             </motion.button>
           ))}
         </motion.div>
-
         {/* Features Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          {/* Feature List - Now showing two cards with increased size */}
+          {/* Feature List */}
           <div className="space-y-8">
             <motion.div
               variants={containerVariants}
@@ -818,7 +708,6 @@ const AthenaFeatures = () => {
                 </motion.div>
               ))}
             </motion.div>
-
             {/* Feature navigation dots */}
             {featurePairs.length > 1 && (
               <div className="flex justify-center mt-8 space-x-3">
@@ -833,7 +722,6 @@ const AthenaFeatures = () => {
               </div>
             )}
           </div>
-
           {/* Feature Visualization */}
           <div className="relative">
             <AnimatePresence mode="wait">
@@ -855,14 +743,13 @@ const AthenaFeatures = () => {
                     {featurePairs[activeFeature]?.[0]?.icon}
                   </motion.div>
                   <h2 className="text-2xl font-bold text-slate-800 mb-2">
-                    {featurePairs[activeFeature]?.[0]?.title} & {featurePairs[activeFeature]?.[1]?.title}
+                    {featurePairs[activeFeature]?.[0]?.title} {featurePairs[activeFeature]?.[1] && `& ${featurePairs[activeFeature][1].title}`}
                   </h2>
                   <div className={`h-1 w-20 bg-gradient-to-r ${categories[activeCategory].color} rounded-full mx-auto mb-4`}></div>
                   <p className="text-slate-600 max-w-md mx-auto">
                     {featurePairs[activeFeature]?.[0]?.description} {featurePairs[activeFeature]?.[1]?.description}
                   </p>
                 </div>
-
                 {/* PARALLEL COLUMNS FOR FEATURE POINTS */}
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   {/* First Feature Column */}
@@ -890,13 +777,12 @@ const AthenaFeatures = () => {
                       </motion.div>
                     ))}
                   </div>
-
                   {/* Second Feature Column */}
                   <div className="space-y-3">
                     <h3 className="font-semibold text-slate-800 text-center mb-2">
                       {featurePairs[activeFeature]?.[1]?.title}
                     </h3>
-                    {featurePairs[activeFeature]?.[1]?.details.slice(0, 4).map((detail, i) => (
+                    {featurePairs[activeFeature]?.[1]?.details && featurePairs[activeFeature][1].details.slice(0, 4).map((detail, i) => (
                       <motion.div
                         key={`1-${i}`}
                         initial={{ opacity: 0, x: 20 }}
@@ -917,7 +803,6 @@ const AthenaFeatures = () => {
                     ))}
                   </div>
                 </div>
-
                 <motion.div 
                   className="mt-4 text-center"
                   initial={{ opacity: 0 }}
@@ -936,7 +821,6 @@ const AthenaFeatures = () => {
             </AnimatePresence>
           </div>
         </div>
-
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
