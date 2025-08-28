@@ -361,7 +361,6 @@
 // };
 
 // export default AthenaFeatures;
-
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useAnimation, AnimatePresence } from 'framer-motion';
 
@@ -517,7 +516,7 @@ const AthenaFeatures: React.FC = () => {
 
   const filteredFeatures = features.filter(feature => feature.category === activeCategory);
 
-  // EXPLICITLY typed array of Feature arrays - fixes implicit any[] error
+  // FIXED: Explicitly typed array of Feature arrays
   const featurePairs: Feature[][] = [];
   for (let i = 0; i < filteredFeatures.length; i += 2) {
     featurePairs.push(filteredFeatures.slice(i, i + 2));
