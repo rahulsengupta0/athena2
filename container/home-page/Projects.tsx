@@ -397,7 +397,7 @@ const AssessmentIcon = () => (
   </svg>
 );
 
-// ==== TYPES ====
+// Define interfaces for type safety
 interface Feature {
   id: number;
   title: string;
@@ -408,6 +408,7 @@ interface Feature {
   bgColor: string;
   details: string[];
 }
+
 interface Category {
   id: number;
   name: string;
@@ -515,14 +516,17 @@ const AthenaFeatures: React.FC = () => {
   ];
 
   const filteredFeatures = features.filter(feature => feature.category === activeCategory);
-  // ✅ THIS IS THE FIXED TYPE DECLARATION
+
+  // EXPLICITLY typed array of Feature arrays - fixes implicit any[] error
   const featurePairs: Feature[][] = [];
   for (let i = 0; i < filteredFeatures.length; i += 2) {
     featurePairs.push(filteredFeatures.slice(i, i + 2));
   }
+
   useEffect(() => {
     if (isInView) controls.start("visible");
   }, [isInView, controls]);
+
   useEffect(() => {
     let interval: ReturnType<typeof setInterval> | undefined;
     if (isAutoRotating && featurePairs.length > 1) {
@@ -532,6 +536,7 @@ const AthenaFeatures: React.FC = () => {
     }
     return () => interval && clearInterval(interval);
   }, [isAutoRotating, activeCategory, featurePairs.length]);
+
   const handleCategoryChange = (index: number) => {
     setActiveCategory(index);
     setActiveFeature(0);
@@ -541,6 +546,7 @@ const AthenaFeatures: React.FC = () => {
     setActiveFeature(index);
     setIsAutoRotating(false);
   };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -556,6 +562,7 @@ const AthenaFeatures: React.FC = () => {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       {/* Subtle background pattern */}
@@ -741,9 +748,7 @@ const AthenaFeatures: React.FC = () => {
                     {featurePairs[activeFeature]?.[0]?.description} {featurePairs[activeFeature]?.[1]?.description}
                   </p>
                 </div>
-                {/* PARALLEL COLUMNS FOR FEATURE POINTS */}
                 <div className="grid grid-cols-2 gap-6 mb-8">
-                  {/* First Feature Column */}
                   <div className="space-y-3">
                     <h3 className="font-semibold text-slate-800 text-center mb-2">
                       {featurePairs[activeFeature]?.[0]?.title}
@@ -768,7 +773,6 @@ const AthenaFeatures: React.FC = () => {
                       </motion.div>
                     ))}
                   </div>
-                  {/* Second Feature Column */}
                   <div className="space-y-3">
                     <h3 className="font-semibold text-slate-800 text-center mb-2">
                       {featurePairs[activeFeature]?.[1]?.title}
@@ -812,7 +816,7 @@ const AthenaFeatures: React.FC = () => {
             </AnimatePresence>
           </div>
         </div>
-        {/* CTA Section */}
+        {/* Call To Action */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
