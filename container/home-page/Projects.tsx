@@ -408,7 +408,6 @@ interface Feature {
   bgColor: string;
   details: string[];
 }
-
 interface Category {
   id: number;
   name: string;
@@ -421,7 +420,6 @@ const AthenaFeatures: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [activeFeature, setActiveFeature] = useState(0);
   const [isAutoRotating, setIsAutoRotating] = useState(true);
-
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const controls = useAnimation();
@@ -517,17 +515,14 @@ const AthenaFeatures: React.FC = () => {
   ];
 
   const filteredFeatures = features.filter(feature => feature.category === activeCategory);
-
-  // ==== FIX: Typed array ====
+  // ✅ THIS IS THE FIXED TYPE DECLARATION
   const featurePairs: Feature[][] = [];
   for (let i = 0; i < filteredFeatures.length; i += 2) {
     featurePairs.push(filteredFeatures.slice(i, i + 2));
   }
-
   useEffect(() => {
     if (isInView) controls.start("visible");
   }, [isInView, controls]);
-
   useEffect(() => {
     let interval: ReturnType<typeof setInterval> | undefined;
     if (isAutoRotating && featurePairs.length > 1) {
@@ -537,7 +532,6 @@ const AthenaFeatures: React.FC = () => {
     }
     return () => interval && clearInterval(interval);
   }, [isAutoRotating, activeCategory, featurePairs.length]);
-
   const handleCategoryChange = (index: number) => {
     setActiveCategory(index);
     setActiveFeature(0);
@@ -547,8 +541,6 @@ const AthenaFeatures: React.FC = () => {
     setActiveFeature(index);
     setIsAutoRotating(false);
   };
-
-  // === Animations ===
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -564,7 +556,6 @@ const AthenaFeatures: React.FC = () => {
     hidden: { opacity: 0, x: 50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       {/* Subtle background pattern */}
